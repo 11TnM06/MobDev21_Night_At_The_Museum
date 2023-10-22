@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "792900083869",
+    "project_id": "mobiletest-99e7b",
+    "storage_bucket": "mobiletest-99e7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792900083869:android:8fefe8fe354fc710163474",
+        "android_client_info": {
+          "package_name": "com.example.mobdev21_night_at_the_museum"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT9fWhr2qdtVSzVbocc__thvAWzE7L1Ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:792900083869:android:e21d187ab546812f163474",
+        "android_client_info": {
+          "package_name": "com.example.week5"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT9fWhr2qdtVSzVbocc__thvAWzE7L1Ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,9 +1,18 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.MobDev21_Night_At_The_Museum" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Theme.MuseumAR" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/blue</item>
     </style>
 
-    <style name="Theme.MobDev21_Night_At_The_Museum" parent="Base.Theme.MobDev21_Night_At_The_Museum" />
+    <style name="Theme.MuseumAR.Fullscreen">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="SCBSwitch">
+        <item name="colorControlActivated">@color/blue</item>
+    </style>
 </resources>

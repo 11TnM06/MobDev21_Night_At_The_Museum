@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CollectionView">
+        <attr name="rv_no_data_view" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="LeafCardView">
+        <attr name="corner_top_left" format="dimension" />
+        <attr name="corner_top_right" format="dimension" />
+        <attr name="corner_bottom_left" format="dimension" />
+        <attr name="corner_bottom_right" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="FullscreenAttrs">
+        <attr name="fullscreenBackgroundColor" format="color" />
+        <attr name="fullscreenTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="HeaderView">
+        <attr name="hv_left_icon" format="reference" />
+        <attr name="hv_left_icon_tint" format="color" />
+        <attr name="hv_left_icon_padding" format="dimension" />
+        <attr name="hv_left_font" format="reference" />
+        <attr name="hv_left_label" format="string" />
+        <attr name="hv_left_text_color" format="color" />
+        <attr name="hv_left_text_size" format="dimension" />
+        <attr name="hv_center_font" format="reference" />
+        <attr name="hv_center_label" format="string" />
+        <attr name="hv_center_text_color" format="color" />
+        <attr name="hv_center_text_size" format="dimension" />
+        <attr name="hv_right_icon" format="reference" />
+        <attr name="hv_right_icon_tint" format="color" />
+        <attr name="hv_right_icon_padding" format="dimension" />
+        <attr name="hv_right_icon_with_text" format="boolean" />
+        <attr name="hv_right_font" format="reference" />
+        <attr name="hv_right_label" format="string" />
+        <attr name="hv_right_text_color" format="color" />
+        <attr name="hv_right_text_size" format="dimension" />
+        <attr name="hv_show_divider" format="boolean" />
+
+        <attr name="hv_show_right_second_icon" format="boolean" />
+        <attr name="hv_right_second_icon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="EditTextView">
+        <attr name="edt_text_content" format="string" />
+        <attr name="edt_text_content_color" format="reference" />
+        <attr name="edt_text_label" format="string" />
+        <attr name="edt_text_label_color" format="reference" />
+        <attr name="edt_text_hint" format="reference" />
+        <attr name="edt_text_hint_color" format="reference" />
+        <attr name="edt_text_is_visible_background" format="boolean" />
+        <attr name="edt_text_ic_left" format="reference" />
+        <attr name="edt_text_ic_right" format="reference" />
+        <attr name="edt_text_enable" format="boolean" />
+        <attr name="edt_text_show_hide_password" format="boolean" />
+        <attr name="edt_text_show_password" format="boolean" />
+        <attr name="edt_text_horizontal_padding" format="dimension" />
+        <attr name="edt_text_vertical_padding" format="dimension" />
+        <attr name="edt_text_disable_copy_paste" format="boolean" />
+        <attr name="edt_text_active_focus" format="boolean" />
+        <attr name="android:inputType" />
+        <attr name="android:imeOptions" />
+        <attr name="android:lines" />
+        <attr name="android:maxLines" />
+        <attr name="android:maxLength" />
+    </declare-styleable>
+
+    <declare-styleable name="FilterView">
+        <attr name="flv_text_left" format="string" />
+        <attr name="flv_text_center" format="string" />
+        <attr name="flv_text_right" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="QuestionAnswerView">
+        <attr name="qav_text_title" format="string" />
+        <attr name="qav_show_hide_arrow" format="boolean" />
+        <attr name="qav_show_hide_number" format="boolean" />
+        <attr name="qav_show_ic_arrow" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ScorePersonalView">
+        <attr name="spv_text_title" format="string" />
+        <attr name="spv_show_icon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="OptionView">
+        <attr name="ov_tv_option" format="string"/>
+        <attr name="ov_tv_ask" format="string"/>
+    </declare-styleable>
+
+</resources>
