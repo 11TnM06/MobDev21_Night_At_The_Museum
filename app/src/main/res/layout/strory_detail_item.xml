@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+            <ImageView
+                android:id="@+id/story_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                />
+            <LinearLayout android:id="@+id/TableLayout01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="#81010101"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="This is vincent"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:paddingTop="20dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="#fff"
+
+                    />
+                <TextView
+                    android:text="Vincent was differeznt than most artists and one of history's best among greats because his art came from his soul. He painted with passion, and instinct and"
+                    android:id="@+id/TextView01"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="20sp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="50dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginStart="5dp"
+                    android:textColor="#fff"
+                    />
+            </LinearLayout>
+<!--        </LinearLayout>-->
+
+
+<!--    <TextView-->
+<!--            android:layout_width="fill_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            tools:text="Vincent was differeznt than most artists and one of history's best among greats because his art came from his soul. He painted with passion, and instinct and"-->
+<!--            android:text="Vincent was differeznt than most artists and one of history's best among greats because his art came from his soul. He painted with passion, and instinct and"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:gravity="right"-->
+<!--            android:textColor="#fff"-->
+<!--            android:textSize="50dp" />-->
+        <!--on below line we are creating
+            linear layout for our views-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!--view to handle move to previous image-->
+            <View
+                android:id="@+id/reverse"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <!--view to move to the next image-->
+            <View
+                android:id="@+id/skip"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ablRealMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constRealMainActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_scrollFlags="scroll|enterAlways|snap">
+
+        <ImageView
+            android:id="@+id/ivRealMainSearch"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/actionBarItemBackground"
+            android:padding="@dimen/dimen_18"
+            android:src="@drawable/ic_search_main_black"
+            app:layout_constraintDimensionRatio="H, 1:1"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRealMainTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/app_name"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/dimen_text_size_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivRealMainCast"
+            app:layout_constraintStart_toEndOf="@id/ivRealMainSearch"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivRealMainCast"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/actionBarItemBackground"
+            android:padding="@dimen/dimen_18"
+            android:src="@drawable/ic_cast_main_black"
+            app:layout_constraintDimensionRatio="H, 1:1"
+            app:layout_constraintEnd_toStartOf="@id/ivRealMainProfile" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivRealMainProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/actionBarItemBackground"
+            android:padding="@dimen/dimen_12"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_no_picture"
+            app:layout_constraintDimensionRatio="H, 1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+        <EditText
+            android:id="@+id/edtRealMainTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical"
+            android:hint="@string/search"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/dimen_text_size_20"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.appbar.AppBarLayout>

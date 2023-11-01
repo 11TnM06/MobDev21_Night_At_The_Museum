@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout_home_fragment"
+    android:background="@color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include android:id="@+id/app_bar" layout="@layout/app_bar" />
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/story_detail_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_marginTop="6dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        android:elevation="10dp"
+        app:tabBackground="@drawable/tab_layout_selector"
+        app:tabIndicator="@null"
+        app:tabGravity="fill"
+        app:tabMinWidth="100dp"
+        app:tabMode="fixed"
+        app:tabIndicatorHeight="0dp"
+        tools:ignore="MissingConstraints" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/story_detail_view_pager"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+             />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
