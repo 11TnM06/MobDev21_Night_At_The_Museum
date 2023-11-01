@@ -12,7 +12,20 @@
           "package_name": "com.example.mobdev21_night_at_the_museum"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "792900083869-okqvp4kavgtq9ct5u4b9a645op9toi3d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mobdev21_night_at_the_museum",
+            "certificate_hash": "ccc39f948570d6438cce900c33e1d1c6f142f381"
+          }
+        },
+        {
+          "client_id": "792900083869-59hul96s0k7e4t55k6pi15mapiicdqn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDT9fWhr2qdtVSzVbocc__thvAWzE7L1Ws"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792900083869-59hul96s0k7e4t55k6pi15mapiicdqn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     },
@@ -31,7 +49,12 @@
           "package_name": "com.example.week5"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "792900083869-59hul96s0k7e4t55k6pi15mapiicdqn9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDT9fWhr2qdtVSzVbocc__thvAWzE7L1Ws"
@@ -39,7 +62,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "792900083869-59hul96s0k7e4t55k6pi15mapiicdqn9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
