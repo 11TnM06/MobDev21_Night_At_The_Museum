@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.mobdev21_night_at_the_museum"
-    compileSdk = 34
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.example.mobdev21_night_at_the_museum"
@@ -23,7 +23,8 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
     }
@@ -40,26 +41,22 @@ android {
 }
 
 dependencies {
+    //Firebase
+    implementation("com.google.firebase:firebase-auth:22.2.0")
+    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.firebaseui:firebase-ui-auth:8.0.2")
+    implementation("com.google.firebase:firebase-firestore:24.9.0")
 
+    //Google
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.google.android.material:material:1.9.0")
+
+    //Application
+    implementation("androidx.browser:browser:1.0.0")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("com.google.firebase:firebase-firestore:24.9.0")
-    implementation("com.google.firebase:firebase-auth:22.2.0")
-    implementation("androidx.browser:browser:1.0.0")
-    implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.android.material:material:1.10.0")
-    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
-    implementation("com.google.firebase:firebase-auth:22.1.2")
-    // Add the dependency for the Firebase Authentication library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation("com.google.android.gms:play-services-auth:20.7.0")
-
-    // [START gradle_firebase_ui_auth]
-    implementation("com.firebaseui:firebase-ui-auth:8.0.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
