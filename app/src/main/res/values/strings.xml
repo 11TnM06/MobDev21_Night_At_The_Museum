@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">Museum AR</string>
+    <string name="app_name">Night At The Museum</string>
+    <string name="login">Đăng nhập</string>
+    <string name="signup">Đăng ký</string>
+    <string name="detail">Chi tiết</string>
     <string name="no_network">Vui lòng kiểm tra lại kết nối và thử lại</string>
     <string name="server_time_out">Server không phản hồi</string>
     <string name="convert_response_error">Lỗi convert response từ server</string>
@@ -34,7 +37,6 @@
     <string name="view_all">Xem tất cả</string>
     <string name="online_exhibit">triển lãm trực tuyến</string>
     <string name="input_user_name">Nhập tên đăng nhập</string>
-    <string name="login">Đăng nhập</string>
     <string name="input_password">Nhập mật khẩu</string>
     <string name="save_account">Lưu tài khoản</string>
     <string name="login3rd">Hoặc đăng nhập với</string>
