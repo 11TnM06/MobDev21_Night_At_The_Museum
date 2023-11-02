@@ -30,13 +30,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 /*
 @TODO Facebook Login
-@TODO Fix Google Login
  */
 public class LoginActivity extends AppCompatActivity {
     EditText mEmail, mPassword;
     MaterialCardView loginWithEmailAndPassword;
     private static final String TAG = "Authentication";
-    private final String TOKEN_ID = "792900083869-okqvp4kavgtq9ct5u4b9a645op9toi3d.apps.googleusercontent.com";
+    private final String TOKEN_ID = "792900083869-59hul96s0k7e4t55k6pi15mapiicdqn9.apps.googleusercontent.com";
     private static final int RC_SIGN_IN = 9001;
     private FirebaseAuth mAuth;
     private LinearLayout googleSignIn, FacebookSignIn;
