@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">MobDev21_Night_At_The_Museum</string>
+    <string name="app_name">Night At The Museum</string>
+    <string name="login">Đăng nhập</string>
+    <string name="signup">Đăng ký</string>
+    <string name="email">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="dont_have_account">Chưa có tài khoản?</string>
+    <string name="have_account">Đã có tài khoản?</string>
+    <string name="zoom_in">Phóng to</string>
+    <string name="read_more">Đọc thêm</string>
+    <string name="detail">Chi tiết</string>
 </resources>
