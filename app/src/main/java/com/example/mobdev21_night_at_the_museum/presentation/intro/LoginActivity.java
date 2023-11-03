@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.intro2_login_fragment);
 
         show = false;
         register = findViewById(R.id.tvLoginSignUp);
@@ -57,9 +57,9 @@ public class LoginActivity extends AppCompatActivity {
             String email = user.getEmail();
 
         }
-        mEmail = findViewById(R.id.etvLoginEmail);
-        mPassword = findViewById(R.id.etvLoginPassword);
-        FacebookSignIn = findViewById(R.id.llLoginFacebook);
+        mEmail = findViewById(R.id.etLoginEmail);
+        mPassword = findViewById(R.id.etLoginPassword);
+        FacebookSignIn = findViewById(R.id.llLoginFb);
         googleSignIn = findViewById(R.id.llLoginGoogle);
 
         //GOOGLE_AUTH_INIT
