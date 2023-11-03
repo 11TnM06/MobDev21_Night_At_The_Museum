@@ -97,7 +97,7 @@
         </FrameLayout>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnSignUp"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_56"
             android:layout_marginTop="@dimen/dimen_20"

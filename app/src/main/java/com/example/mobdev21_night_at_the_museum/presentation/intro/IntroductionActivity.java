@@ -19,7 +19,7 @@ public class IntroductionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.intro1_introduction_activity);
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
         if (user == null) {

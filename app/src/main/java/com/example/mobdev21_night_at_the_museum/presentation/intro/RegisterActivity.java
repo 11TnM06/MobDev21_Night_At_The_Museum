@@ -31,11 +31,11 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.intro3_signup_activity);
         mAuth = FirebaseAuth.getInstance();
-        mEmail = findViewById(R.id.etvSignUpEmail);
-        mPassword = findViewById(R.id.etvSignUpPassword);
-        mRePassword = findViewById(R.id.etvSignUpPasswordAgain);
+        mEmail = findViewById(R.id.etSignupEmail);
+        mPassword = findViewById(R.id.etSignupPassword);
+        mRePassword = findViewById(R.id.etSignupPasswordAgain);
         register = findViewById(R.id.btnSignUp);
         login = findViewById(R.id.tvSignUpSignIn);
         login.setOnClickListener(new View.OnClickListener(){
