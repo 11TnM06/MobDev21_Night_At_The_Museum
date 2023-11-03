@@ -42,6 +42,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
+            android:id="@+id/loginBtn"
             android:layout_height="49dp"
             android:layout_marginBottom="12dp"
             app:cardBackgroundColor="@color/dark_blue"
@@ -56,6 +57,7 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
+            android:id="@+id/signupBtn"
             android:layout_height="49dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="@dimen/dimen_corner_30">

@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         mPassword = findViewById(R.id.etSignupPassword);
         mRePassword = findViewById(R.id.etSignupPasswordAgain);
         register = findViewById(R.id.btnSignUp);
-        login = findViewById(R.id.tvSignUpSignIn);
+        login = findViewById(R.id.tvLoginSignUp);
         login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
