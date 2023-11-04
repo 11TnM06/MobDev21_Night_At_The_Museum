@@ -33,6 +33,9 @@
             android:name=".presentation.intro.IntroductionActivity"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
             android:exported="false" />
+        <activity android:name=".presentation.home.HomeActivity"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"
+            android:exported="true"/>
     </application>
 
 </manifest>

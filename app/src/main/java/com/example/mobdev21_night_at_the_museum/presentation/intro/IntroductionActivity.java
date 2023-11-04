@@ -17,18 +17,12 @@ public class IntroductionActivity extends AppCompatActivity {
         setContentView(R.layout.intro1_introduction_activity);
         login = findViewById(R.id.loginBtn);
         register = findViewById(R.id.signupBtn);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent toLogin = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(toLogin);
-            }
+        login.setOnClickListener(view -> {
+            Intent toLogin = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(toLogin);
         });
-        register.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent toSignUp = new Intent(getApplicationContext(), RegisterActivity.class);
-            }
+        register.setOnClickListener(view -> {
+            Intent toSignUp = new Intent(getApplicationContext(), RegisterActivity.class);
         });
     }
 }
