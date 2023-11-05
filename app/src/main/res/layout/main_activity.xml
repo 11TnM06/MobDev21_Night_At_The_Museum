@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Top App Bar of Application        -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/MainAppBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/MainConstActionBar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_scrollFlags="scroll|enterAlways|snap">
+
+                <ImageView
+                    android:id="@+id/MainIvSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/actionBarItemBackground"
+                    android:padding="@dimen/dimen_18"
+                    android:src="@drawable/ic_search_main_black"
+                    app:layout_constraintDimensionRatio="H, 1:1"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/MainTvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/app_name"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="@dimen/dimen_text_size_20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/MainIvCast"
+                    app:layout_constraintStart_toEndOf="@id/MainIvSearch"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/MainIvCast"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/actionBarItemBackground"
+                    android:padding="@dimen/dimen_18"
+                    android:src="@drawable/ic_cast_main_black"
+                    app:layout_constraintDimensionRatio="H, 1:1"
+                    app:layout_constraintEnd_toStartOf="@id/MainIvProfile" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/MainIvProfile"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/actionBarItemBackground"
+                    android:padding="@dimen/dimen_12"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_no_picture"
+                    app:layout_constraintDimensionRatio="H, 1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+                <EditText
+                    android:id="@+id/MainEdtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="?android:attr/actionBarSize"
+                    android:background="@color/white"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center_vertical"
+                    android:hint="@string/search"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/dimen_text_size_20"
+                    android:visibility="gone" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--Custome View Pager of Application        -->
+        <com.example.mobdev21_night_at_the_museum.presentation.widget.CustomViewPager
+            android:id="@+id/MainViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:background="@color/black" />
+
+        <!--Bottom nav bar of Application        -->
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/MainBottomAppBarFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp"
+            app:fabCradleMargin="7dp"
+            app:fabCradleRoundedCornerRadius="8dp"
+            app:hideOnScroll="true"
+            app:layout_scrollFlags="scroll|enterAlways|snap">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/MainBottomNavView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_rectange_transparent_bg"
+                app:itemIconTint="@color/bottom_nav_selector"
+                app:labelVisibilityMode="unlabeled"
+                app:menu="@menu/bottom_nav_menu" />
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/MainFlActBtnCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_camera"
+            app:backgroundTint="@color/white"
+            app:backgroundTintMode="src_atop"
+            app:elevation="0dp"
+            app:layout_anchor="@id/MainBottomAppBarFooter"
+            app:layout_constraintBottom_toTopOf="@id/MainBottomAppBarFooter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:maxImageSize="64dp"
+            app:tint="@null"
+            android:contentDescription="Open Camera" />
+
+        <FrameLayout
+            android:id="@+id/MainFrameLayoutContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
