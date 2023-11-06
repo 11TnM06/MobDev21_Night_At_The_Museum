@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobdev21_night_at_the_museum.R;
+import com.example.mobdev21_night_at_the_museum.presentation.home.HomeActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -28,6 +29,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+
 /*
 @TODO Facebook Login
  */
@@ -50,13 +52,7 @@ public class LoginActivity extends AppCompatActivity {
 
         show = false;
         register = findViewById(R.id.tvLoginSignUp);
-
         mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null) {
-            String email = user.getEmail();
-
-        }
         mEmail = findViewById(R.id.etLoginEmail);
         mPassword = findViewById(R.id.etLoginPassword);
         FacebookSignIn = findViewById(R.id.llLoginFb);
@@ -104,18 +100,12 @@ public class LoginActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            Intent toMainScreen = new Intent(getApplicationContext(), IntroductionActivity.class);
+            Intent toMainScreen = new Intent(getApplicationContext(), HomeActivity.class);
             startActivity(toMainScreen);
             finish();
         }
     }
 
-    //COMMON FUNCTION
-    public void redirectToLogin() {
-        Intent toMainScreen = new Intent(getApplicationContext(), IntroductionActivity.class);
-        startActivity(toMainScreen);
-        finish();
-    }
 
     //SIGN_IN WITH EMAIL AND PASSWORD
     private void signInWithEmailAndPassword(String email, String password) {
@@ -125,8 +115,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     FirebaseUser user = mAuth.getCurrentUser();
-                    redirectToLogin();
+                    toHomeScreen();
                 } else {
+                    redirectToLogin();
                     Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -174,8 +165,9 @@ public class LoginActivity extends AppCompatActivity {
                     if (task.getResult().getAdditionalUserInfo().isNewUser()) {
                         Toast.makeText(getApplicationContext(), "User created", Toast.LENGTH_SHORT).show();
                     }
-                    redirectToLogin();
+                    toHomeScreen();
                 } else {
+                    redirectToLogin();
                     Log.w(TAG, "signInWithCredential:failure", task.getException());
                 }
             }
@@ -187,4 +179,15 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void toHomeScreen() {
+        Intent homeScreen = new Intent(getApplicationContext(), HomeActivity.class);
+        startActivity(homeScreen);
+    }
+
+    //COMMON FUNCTION
+    public void redirectToLogin() {
+        Intent toMainScreen = new Intent(getApplicationContext(), IntroductionActivity.class);
+        startActivity(toMainScreen);
+        finish();
+    }
 }

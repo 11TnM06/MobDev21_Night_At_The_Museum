@@ -23,6 +23,7 @@ public class IntroductionActivity extends AppCompatActivity {
         });
         register.setOnClickListener(view -> {
             Intent toSignUp = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(toSignUp);
         });
     }
 }

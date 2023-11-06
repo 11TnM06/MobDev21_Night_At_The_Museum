@@ -2,11 +2,7 @@ package com.example.mobdev21_night_at_the_museum.presentation.home;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,49 +23,55 @@ import java.util.ArrayList;
 
 
 public class HomeActivity extends AppCompatActivity {
-    RecyclerView rv;
-    RecyclerView cv;
-    LinearLayoutManager linearLayoutManager;
-    LinearLayoutManager linearLayoutManager1;
+    RecyclerView museumView, collectionView;
+    LinearLayoutManager linearLayoutManager, linearLayoutManager1;
+
     StreetViewAdapter streetAdapter;
     CollectionsAdapter collectionsAdapter;
     CollectionReference collection;
     ArrayList<String> museumImg, museumName, museumPlace;
     ArrayList<String> picCollections;
-    ArrayList<ImageView> homeCollections = new ArrayList<>();
+    ArrayList<ImageView> homeCollections;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_home_activity);
 
+        //Init arrs
+        museumImg = new ArrayList<>();
+        museumName = new ArrayList<>();
+        museumPlace = new ArrayList<>();
+        picCollections = new ArrayList<>();
+        homeCollections = new ArrayList<>();
+
+        //Museum you may like
         homeCollections.add(findViewById(R.id.ivHomeCollection1));
         homeCollections.add(findViewById(R.id.ivHomeCollection2));
         homeCollections.add(findViewById(R.id.ivHomeCollection3));
         homeCollections.add(findViewById(R.id.ivHomeCollection4));
         homeCollections.add(findViewById(R.id.ivHomeCollection5));
-        museumImg = new ArrayList<>();
-        museumName = new ArrayList<>();
-        museumPlace = new ArrayList<>();
-        picCollections = new ArrayList<>();
-        FirebaseApp.initializeApp(this);
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        cv = findViewById(R.id.rvCollectionsStories); // RecyclerView for collections
-        rv = findViewById(R.id.horizontalRv);
 
+        //Items you may like
+        collectionView = findViewById(R.id.rvCollectionsStories); // RecyclerView for collections
+        museumView = findViewById(R.id.rvMuseumViews); //RecyclerView for museums
+
+        //Setup Collections Adapters
         collectionsAdapter = new CollectionsAdapter(picCollections);
         linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        cv.setLayoutManager(linearLayoutManager1);
-        cv.setAdapter(collectionsAdapter);
+        collectionView.setLayoutManager(linearLayoutManager1);
+        collectionView.setAdapter(collectionsAdapter);
 
-        // Initialize the StreetViewAdapter with an empty dataList
+        // Setup MuseumView Adapters
         streetAdapter = new StreetViewAdapter(museumName, museumPlace, museumImg);
-
         linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
-        rv.setLayoutManager(linearLayoutManager);
-        rv.setAdapter(streetAdapter);
+        museumView.setLayoutManager(linearLayoutManager);
+        museumView.setAdapter(streetAdapter);
+
         // Fetch data from Firestore
+        FirebaseApp.initializeApp(this);
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("collections").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -82,10 +84,8 @@ public class HomeActivity extends AppCompatActivity {
                         picCollections.add(thumbnailData);
                     }
 
-                    // Notify the adapter that data has changed
                     collectionsAdapter.notifyDataSetChanged();
                     loadFavCollections(picCollections, homeCollections);
-
                 } else {
                     Log.e("Firestore Data", "Error getting documents: " + task.getException());
                 }
@@ -107,7 +107,6 @@ public class HomeActivity extends AppCompatActivity {
                         museumPlace.add(placeData);
                     }
 
-                    // Notify the adapter that data has changed
                     streetAdapter.notifyDataSetChanged();
 
                 } else {
@@ -124,97 +123,4 @@ public class HomeActivity extends AppCompatActivity {
         }
     }
 
-    class StreetViewAdapter extends RecyclerView.Adapter<StreetViewAdapter.MyHolder> {
-        ArrayList<String> name;
-        ArrayList<String> place;
-        ArrayList<String> thumbnailUrls;
-
-        public StreetViewAdapter(ArrayList<String> name, ArrayList<String> place, ArrayList<String> thumbnailUrls) {
-            this.name = name;
-            this.place = place;
-            this.thumbnailUrls = thumbnailUrls;
-        }
-
-        @NonNull
-        @Override
-        public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(HomeActivity.this).inflate(R.layout.home_street_view_sub_item2, null);
-            return new MyHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull MyHolder holder, int position) {
-
-            if (thumbnailUrls.size() != 0 && name.size() != 0 && place.size() != 0) {
-                holder.tvHomeStreetViewName.setText(name.get(position));
-                holder.tvHomeStreetViewPlace.setText(place.get(position));
-                String imageUrl = thumbnailUrls.get(position);
-                Picasso.get().load(imageUrl).into(holder.ivHomeStreetViewThumbnail);
-            }
-
-        }
-
-        @Override
-        public int getItemCount() {
-            return name.size();
-        }
-
-        class MyHolder extends RecyclerView.ViewHolder {
-            TextView tvHomeStreetViewName;
-            TextView tvHomeStreetViewPlace;
-            ImageView ivHomeStreetViewThumbnail;
-
-            public MyHolder(@NonNull View itemView) {
-                super(itemView);
-                tvHomeStreetViewName = itemView.findViewById(R.id.tvHomeStreetViewName);
-                tvHomeStreetViewPlace = itemView.findViewById(R.id.tvHomeStreetViewPlace);
-                ivHomeStreetViewThumbnail = itemView.findViewById(R.id.ivHomeStreetViewThumbnail);
-            }
-        }
-
-    }
-
-    class CollectionsAdapter extends RecyclerView.Adapter<CollectionsAdapter.CollectionHolder> {
-        ArrayList<String> picCollections;
-
-        public CollectionsAdapter(ArrayList<String> picCollections) {
-            this.picCollections = picCollections;
-
-        }
-
-        @NonNull
-        @Override
-        public CollectionHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(HomeActivity.this).inflate(R.layout.home_item_you_may_like_item, null);
-            return new CollectionHolder(view);
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull CollectionHolder holder, int position) {
-            if (picCollections.size() != 0) {
-
-                String imageUrl = picCollections.get(position);
-                // Load and display the image using Picasso
-                Picasso.get().load(imageUrl).into(holder.ivPicCollection);
-            }
-
-
-        }
-
-        @Override
-        public int getItemCount() {
-            return picCollections.size();
-        }
-
-        class CollectionHolder extends RecyclerView.ViewHolder {
-            TextView tvTitle;
-            com.google.android.material.imageview.ShapeableImageView ivPicCollection;
-
-            public CollectionHolder(@NonNull View itemView) {
-                super(itemView);
-                ivPicCollection = itemView.findViewById(R.id.ivPicCollection);
-            }
-        }
-
-    }
 }
