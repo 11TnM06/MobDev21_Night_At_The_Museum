@@ -115,11 +115,12 @@
                     android:layout_width="@dimen/dimen_24"
                     android:layout_height="@dimen/dimen_24"
                     app:srcCompat="@drawable/ic_facebook" />
+
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dimen_8"
+                    android:layout_height="13dp"
                     android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dimen_8"
                     android:text="@string/login" />
             </LinearLayout>
 
