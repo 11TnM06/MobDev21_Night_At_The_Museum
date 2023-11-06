@@ -53,9 +53,9 @@ public class LoginActivity extends AppCompatActivity {
         show = false;
         register = findViewById(R.id.tvLoginSignUp);
         mAuth = FirebaseAuth.getInstance();
-        mEmail = findViewById(R.id.etLoginEmail);
-        mPassword = findViewById(R.id.etLoginPassword);
-        FacebookSignIn = findViewById(R.id.llLoginFb);
+        mEmail = findViewById(R.id.etvLoginEmail);
+        mPassword = findViewById(R.id.etvLoginPassword);
+        FacebookSignIn = findViewById(R.id.llLoginFacebook);
         googleSignIn = findViewById(R.id.llLoginGoogle);
 
         //GOOGLE_AUTH_INIT
