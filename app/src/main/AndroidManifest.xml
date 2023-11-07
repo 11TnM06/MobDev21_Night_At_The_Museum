@@ -21,6 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".presentation.intro.LoginActivity"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
@@ -36,6 +37,11 @@
         <activity android:name=".presentation.home.HomeActivity"
             android:theme="@style/Theme.Material3.Light.NoActionBar"
             android:exported="true"/>
+
+        <activity
+            android:name=".presentation.item.ItemActivity"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>

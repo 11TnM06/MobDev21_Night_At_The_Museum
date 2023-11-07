@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tvItemDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:layout_marginHorizontal="@dimen/dimen_30"
+            android:maxLines="3"
+            android:textSize="@dimen/dimen_text_size_16"
+            android:textColor="@color/main_black"
+            android:fontFamily="@font/roboto_regular"
+            android:text="The clear tribute to the Dying Galata, bronze sculpture by the hellenic sculptor Epigonus which was part of the monumental complex of the Group of Attalus in Pergamon (230-220 B.C.) today known thanks to its roman marble copy (Rome, Musei Capitolini) is referred by Crocetti to the partisan struggle during the Resistance, the civil war that took place in Italy which, after the announced armistice on September 8th 1943, concludes the second world war.
+\nIn the gesture of the surrendering it’s implied the drama of the figuration: it’s not just a physical defeat but also an abandonment of the awareness, a deep and moral defeat that feels more like a voluntary act than a destiny occurrence" />
+
+        <TextView
+            android:id="@+id/tvItemDescriptionReadMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16"
+            android:layout_marginStart="@dimen/dimen_30"
+            android:layout_marginBottom="@dimen/dimen_40"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/dimen_text_size_16"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/read_more" />
+
+    </LinearLayout>
+</LinearLayout>

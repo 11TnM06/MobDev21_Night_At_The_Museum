@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_4"
+        app:cardCornerRadius="@dimen/dimen_corner_30"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/gray"
+        app:strokeWidth="@dimen/dimen_1">
+
+        <TextView
+            android:id="@+id/tvActionItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dimen_8"
+            android:fontFamily="@font/roboto_medium"
+            android:paddingHorizontal="@dimen/dimen_16"
+            android:paddingVertical="@dimen/dimen_6"
+            android:text="@string/zoom_in"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/dimen_text_size_16"
+            app:drawableStartCompat="@drawable/ic_street_view" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
