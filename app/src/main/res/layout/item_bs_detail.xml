@@ -45,5 +45,22 @@
 
         </FrameLayout>
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/dimen_82">
+
+            <TextView
+                android:id="@+id/tvbsDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_30"
+                android:layout_marginStart="@dimen/dimen_30"
+                android:visibility="gone"
+                tools:text="@string/detail" />
+
+        </FrameLayout>
+
     </FrameLayout>
 </LinearLayout>

@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <include layout="@layout/app_bar" />
-    <include layout="@layout/item_image_n_actions" />
-    <include layout="@layout/item_bottom_sheet" />
+    <data>
+        <variable
+            name="item"
+            type="com.example.mobdev21_night_at_the_museum.model.Item" />
+    </data>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/app_bar" />
+
+        <include layout="@layout/item_image_n_actions" />
+
+        <include
+            layout="@layout/item_bottom_sheet"
+            bind:myItem="@{item}" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

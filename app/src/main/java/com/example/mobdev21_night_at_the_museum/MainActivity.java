@@ -3,6 +3,10 @@ package com.example.mobdev21_night_at_the_museum;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import com.example.mobdev21_night_at_the_museum.databinding.ItemBottomSheetBinding;
+import com.example.mobdev21_night_at_the_museum.model.Item;
 import com.example.mobdev21_night_at_the_museum.presentation.item.ItemActivity;
 
 import com.example.mobdev21_night_at_the_museum.presentation.intro.IntroductionActivity;

@@ -4,26 +4,27 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/dimen_168">
-
-        <ImageView
-            android:id="@+id/ivItemImage"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_300"
-            android:layout_above="@id/rvItemActions"
-            android:layout_alignParentTop="true"
-            android:background="@color/black" />
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dimen_168">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvItemActions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fillViewport="true"
-            android:layout_alignParentBottom="true" />
+            <ImageView
+                android:id="@+id/ivItemImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_300"
+                android:layout_above="@id/rvItemActions"
+                android:layout_alignParentTop="true"
+                android:background="@color/black"
+                android:src="@drawable/intro_bg"/>
 
-    </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvItemActions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
 
 </LinearLayout>

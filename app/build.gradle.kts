@@ -38,6 +38,9 @@ android {
     dataBinding {
         enable = true
     }
+    viewBinding {
+        enable = true
+    }
 }
 
 dependencies {
@@ -47,6 +50,8 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.firebaseui:firebase-ui-auth:8.0.2")
     implementation("com.google.firebase:firebase-firestore:24.9.0")
+    implementation ("com.google.firebase:firebase-analytics:17.2.1")
+    implementation ("com.google.firebase:firebase-database:19.2.0")
 
     //Google
     implementation("com.google.android.gms:play-services-auth:20.7.0")
