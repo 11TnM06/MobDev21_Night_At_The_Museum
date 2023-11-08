@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/home_collection_item" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="@string/explore_with_street_view"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/dimen_text_size_24" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMuseumViews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dimen_10"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="@string/recommended_for_you"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/dimen_text_size_24" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCollectionsStories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_14"
+
+            android:clipToPadding="false"
+            android:paddingHorizontal="@dimen/dimen_24" />
+
+
+    </LinearLayout>
+</ScrollView>

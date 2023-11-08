@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/ivSignupTop"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/intro2_starry_night"/>
+
+    <View
+        android:id="@+id/vSignupLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/dimen_20"
+        app:layout_constraintBottom_toBottomOf="@+id/ivSignupTop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/shape_rectangle_white_bg_corner_top_16"
+        android:paddingHorizontal="@dimen/dimen_20"
+        android:paddingVertical="@dimen/dimen_70"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vSignupLine"
+        app:layout_constraintVertical_bias="0.0">
+
+        <EditText
+            android:id="@+id/etSignupEmail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_56"
+            android:background="@drawable/shape_rectangle_gray_bg_corner_30"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="@dimen/dimen_20"
+            android:textColor="@color/main_black"
+            android:textColorHint="@color/gray"
+            android:textSize="@dimen/dimen_text_size_18" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16">
+            <EditText
+                android:id="@+id/etSignupPassword"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_56"
+                android:paddingHorizontal="@dimen/dimen_20"
+                android:background="@drawable/shape_rectangle_gray_bg_corner_30"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="@color/main_black"
+                android:textColorHint="@color/gray"
+                android:textSize="@dimen/dimen_text_size_18" />
+
+            <ImageView
+                android:id="@+id/ivSignupShowPassword"
+                android:layout_width="@dimen/dimen_24"
+                android:layout_height="@dimen/dimen_24"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:src="@drawable/ic_show_password_gray" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16">
+            <EditText
+                android:id="@+id/etSignupPasswordAgain"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_56"
+                android:paddingHorizontal="@dimen/dimen_20"
+                android:background="@drawable/shape_rectangle_gray_bg_corner_30"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="@color/main_black"
+                android:textColorHint="@color/gray"
+                android:textSize="@dimen/dimen_text_size_18" />
+
+            <ImageView
+                android:id="@+id/ivSignupShowPasswordAgain"
+                android:layout_width="@dimen/dimen_24"
+                android:layout_height="@dimen/dimen_24"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:src="@drawable/ic_show_password_gray" />
+        </FrameLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_56"
+            android:layout_marginTop="@dimen/dimen_20"
+            app:cardBackgroundColor="@color/dark_blue"
+            app:cardCornerRadius="@dimen/dimen_corner_30">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/signup"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_text_size_18" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_70">
+
+            <LinearLayout
+                android:id="@+id/llLoginFb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="@dimen/dimen_24"
+                    android:layout_height="@dimen/dimen_24"
+                    app:srcCompat="@drawable/ic_facebook" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:layout_gravity="center"
+                    android:text="@string/signup" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llLoginGoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/dimen_50">
+                <ImageView
+                    android:layout_width="@dimen/dimen_24"
+                    android:layout_height="@dimen/dimen_24"
+                    app:srcCompat="@drawable/ic_google" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:layout_gravity="center"
+                    android:text="@string/signup" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_20">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/have_account"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/dimen_text_size_16" />
+            <TextView
+                android:id="@+id/tvLoginSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_8"
+                android:text="@string/login"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/dimen_text_size_16" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
