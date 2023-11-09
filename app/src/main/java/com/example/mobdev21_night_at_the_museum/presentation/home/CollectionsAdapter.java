@@ -1,21 +1,28 @@
 package com.example.mobdev21_night_at_the_museum.presentation.home;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobdev21_night_at_the_museum.R;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class CollectionsAdapter extends RecyclerView.Adapter<CollectionsAdapter.CollectionHolder> {
-    private ArrayList<String> picCollections;
+    private ArrayList<DocumentSnapshot> picCollections;
+    Context context;
 
-    public CollectionsAdapter(ArrayList<String> picCollections) {
+    public CollectionsAdapter(ArrayList<DocumentSnapshot> picCollections, Context context) {
         this.picCollections = picCollections;
+        this.context = context;
     }
 
     @NonNull
@@ -28,8 +35,15 @@ public class CollectionsAdapter extends RecyclerView.Adapter<CollectionsAdapter.
     @Override
     public void onBindViewHolder(@NonNull CollectionHolder holder, int position) {
         if (picCollections.size() != 0) {
-            String imageUrl = picCollections.get(position);
-            Picasso.get().load(imageUrl).into(holder.ivPicCollection);
+            String thumbnailURL = picCollections.get(position).get("thumbnail").toString();
+            Picasso.get().load(thumbnailURL).into(holder.ivPicCollection);
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    Toast.makeText(context.getApplicationContext(), "Item clicked" + holder.getAdapterPosition(), Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 
