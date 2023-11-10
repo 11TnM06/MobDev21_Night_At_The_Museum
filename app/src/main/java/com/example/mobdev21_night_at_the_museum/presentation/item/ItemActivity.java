@@ -39,29 +39,6 @@ public class ItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.item);
-
-        // Bottom Sheet
-        LinearLayout bottomSheetLayout = findViewById(R.id.sheet);
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
-        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-
-        // Horizontal RecycleView -> list action buttons
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
-        recyclerView = findViewById(R.id.rvItemActions);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setHasFixedSize(true);
-
-        List<Pair<Integer, Integer>> listActionItems = new ArrayList<>();
-        Pair<Integer, Integer> button1 = new Pair<>(R.drawable.ic_zoom_in, R.string.zoom_in);
-        Pair<Integer, Integer> button2 = new Pair<>(R.drawable.ic_ar, R.string.view_in_ar);
-        Pair<Integer, Integer> button3 = new Pair<>(R.drawable.ic_street_view_sized, R.string.street_view);
-        listActionItems.add(button1);
-        listActionItems.add(button2);
-        listActionItems.add(button3);
-        Log.d("TAG", "onCreate: " + listActionItems.toString());
-        recyclerView.setAdapter(new MyRecycleViewAdapter(listActionItems));
 
         /** Get Data & Binding **/
         ItemBinding itemBinding = DataBindingUtil.setContentView(this, R.layout.item);
@@ -90,6 +67,11 @@ public class ItemActivity extends AppCompatActivity {
                 Log.d("FIRE ERROR", "The read failed: " + error.getCode());
             }
         });
+
+        /* Bottom Sheet */
+        LinearLayout bottomSheetLayout = findViewById(R.id.sheet);
+        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
+        bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
 
         // Read more
         TextView tvItemDescription = findViewById(R.id.tvItemDescription);
@@ -120,9 +102,26 @@ public class ItemActivity extends AppCompatActivity {
                 }
             }
         });
-    }
 
-    private void dataBindingItem(ItemBinding itemBinding, Item mockItem) {
+        /* Horizontal RecycleView -> list action buttons */
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
+        recyclerView = findViewById(R.id.rvItemActions);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setHasFixedSize(true);
+
+        List<Pair<Integer, Integer>> listActionItems = new ArrayList<>();
+        Pair<Integer, Integer> button1 = new Pair<>(R.drawable.ic_zoom_in, R.string.zoom_in);
+        Pair<Integer, Integer> button2 = new Pair<>(R.drawable.ic_ar, R.string.view_in_ar);
+        Pair<Integer, Integer> button3 = new Pair<>(R.drawable.ic_street_view_sized, R.string.street_view);
+        listActionItems.add(button1);
+        listActionItems.add(button2);
+        listActionItems.add(button3);
+        Log.d("TAG", "onCreate: " + listActionItems.toString());
+        recyclerView.setAdapter(new MyRecycleViewAdapter(listActionItems));
+
+    }
+    private void dataBindingItem (ItemBinding itemBinding, Item mockItem){
         itemBinding.setItem(mockItem);
 
         // Update item image
@@ -133,7 +132,7 @@ public class ItemActivity extends AppCompatActivity {
         // Update Detail in bottom sheet
         TextView tvbsDetail = findViewById(R.id.tvbsDetail);
         String tvDetail = "";
-        for (ItemDetail itemDetail: mockItem.getDetails()) {
+        for (ItemDetail itemDetail : mockItem.getDetails()) {
             tvDetail += itemDetail.toString();
         }
         tvbsDetail.setText(Html.fromHtml(tvDetail));
