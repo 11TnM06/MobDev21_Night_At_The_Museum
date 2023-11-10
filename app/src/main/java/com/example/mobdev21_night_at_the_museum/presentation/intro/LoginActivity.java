@@ -1,5 +1,6 @@
 package com.example.mobdev21_night_at_the_museum.presentation.intro;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -31,6 +32,9 @@ import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "Authentication";
+    private static final String PREF_NAME = "MUSEUM";
+    private static final String KEY_USER_EMAIL = "user_email";
+    private static final String KEY_USER_PASSWORD = "user_password";
     private final String TOKEN_ID = "792900083869-59hul96s0k7e4t55k6pi15mapiicdqn9.apps.googleusercontent.com";
     private static final int RC_SIGN_IN = 9001;
     private FirebaseAuth mAuth;
@@ -69,21 +73,18 @@ public class LoginActivity extends AppCompatActivity {
 
         // Register button click
         register.setOnClickListener(v -> toRegister());
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            // User is already signed in, sign them out
-            mAuth.signOut();
-        }
+
+        automaticSignIn();
+        Log.d("SharedPreferences", "Auto Login");
+
     }
 
     private void signInWithEmailAndPassword(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
+                saveUserLoginData(email, password);
+                Log.d("SharedPreferences", "Saved User Info");
                 toHomeScreen();
             } else {
                 toIntroduction();
@@ -160,9 +161,6 @@ public class LoginActivity extends AppCompatActivity {
                     // Handle the Firestore write failure
                 });
     }
-//    private void saveUserToSharedPreference() {
-//        SharedPreferences.Editor editor = getSharedPreferences()
-//    }
 
     private void toRegister() {
         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
@@ -184,5 +182,35 @@ public class LoginActivity extends AppCompatActivity {
         Intent toMainScreen = new Intent(getApplicationContext(), IntroductionActivity.class);
         startActivity(toMainScreen);
         finish();
+    }
+
+    public void saveUserLoginData(String email, String password) {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_USER_EMAIL, email);
+        editor.putString(KEY_USER_PASSWORD, password);
+        editor.apply();
+
+    }
+
+    public void automaticSignIn() {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        String email = sharedPreferences.getString(KEY_USER_EMAIL, null);
+        String password = sharedPreferences.getString(KEY_USER_PASSWORD, null);
+        Log.d("PreferenceEmail", email);
+        Log.d("PreferPass", password);
+        if (email == null || password == null) {
+            return;
+        }
+        signInWithEmailAndPassword(email, password);
+    }
+
+
+    public void clearUserLoginData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(KEY_USER_EMAIL);
+        editor.remove(KEY_USER_PASSWORD);
+        editor.apply();
     }
 }
