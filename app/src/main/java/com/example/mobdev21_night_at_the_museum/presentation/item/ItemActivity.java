@@ -72,39 +72,17 @@ public class ItemActivity extends AppCompatActivity {
         LinearLayout bottomSheetLayout = findViewById(R.id.sheet);
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-
         // Read more
-        TextView tvItemDescription = findViewById(R.id.tvItemDescription);
-        TextView tvItemDescriptionReadMore = findViewById(R.id.tvItemDescriptionReadMore);
-        tvItemDescriptionReadMore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (tvItemDescriptionReadMore.getText() == getApplication().getString(R.string.read_more)) {
-                    tvItemDescription.setMaxLines(Integer.MAX_VALUE);
-                    tvItemDescriptionReadMore.setText(getApplication().getString(R.string.read_less));
-                } else {
-                    tvItemDescription.setMaxLines(3);
-                    tvItemDescriptionReadMore.setText(getApplication().getString(R.string.read_more));
-                }
-            }
-        });
-
+        handleReadmoreClick();
         // Detail
-        FrameLayout flItemDetailTitleContainer = findViewById(R.id.flItemDetailTitleContainer);
-        TextView tvbsDetail = findViewById(R.id.tvbsDetail);
-        flItemDetailTitleContainer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (tvbsDetail.getVisibility() == View.GONE) {
-                    tvbsDetail.setVisibility(View.VISIBLE);
-                } else {
-                    tvbsDetail.setVisibility(View.GONE);
-                }
-            }
-        });
+        handleDetailClick();
 
         /* Horizontal RecycleView -> list action buttons */
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        showListItemActionButtons();
+    }
+
+    private void showListItemActionButtons() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(ItemActivity.this);
         linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         recyclerView = findViewById(R.id.rvItemActions);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -119,8 +97,40 @@ public class ItemActivity extends AppCompatActivity {
         listActionItems.add(button3);
         Log.d("TAG", "onCreate: " + listActionItems.toString());
         recyclerView.setAdapter(new MyRecycleViewAdapter(listActionItems));
-
     }
+
+    private void handleDetailClick() {
+        FrameLayout flItemDetailTitleContainer = findViewById(R.id.flItemDetailTitleContainer);
+        TextView tvbsDetail = findViewById(R.id.tvbsDetail);
+        flItemDetailTitleContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (tvbsDetail.getVisibility() == View.GONE) {
+                    tvbsDetail.setVisibility(View.VISIBLE);
+                } else {
+                    tvbsDetail.setVisibility(View.GONE);
+                }
+            }
+        });
+    }
+
+    private void handleReadmoreClick() {
+        TextView tvItemDescription = findViewById(R.id.tvItemDescription);
+        TextView tvItemDescriptionReadMore = findViewById(R.id.tvItemDescriptionReadMore);
+        tvItemDescriptionReadMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (tvItemDescriptionReadMore.getText() == getApplication().getString(R.string.read_more)) {
+                    tvItemDescription.setMaxLines(Integer.MAX_VALUE);
+                    tvItemDescriptionReadMore.setText(getApplication().getString(R.string.read_less));
+                } else {
+                    tvItemDescription.setMaxLines(3);
+                    tvItemDescriptionReadMore.setText(getApplication().getString(R.string.read_more));
+                }
+            }
+        });
+    }
+
     private void dataBindingItem (ItemBinding itemBinding, Item mockItem){
         itemBinding.setItem(mockItem);
 
