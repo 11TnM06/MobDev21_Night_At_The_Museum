@@ -15,11 +15,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//        Intent introductionScreen = new Intent(getApplicationContext(), IntroductionActivity.class);
-//        startActivity(introductionScreen);
+        setContentView(R.layout.activity_main);
+        Intent introductionScreen = new Intent(getApplicationContext(), IntroductionActivity.class);
+        startActivity(introductionScreen);
 
-        Intent intent = new Intent(this, ItemActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, ItemActivity.class);
+//        startActivity(intent);
     }
 }
