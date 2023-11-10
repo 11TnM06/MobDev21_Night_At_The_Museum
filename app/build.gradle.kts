@@ -38,6 +38,9 @@ android {
     dataBinding {
         enable = true
     }
+    viewBinding {
+        enable = true
+    }
 }
 
 dependencies {
@@ -47,11 +50,15 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.firebaseui:firebase-ui-auth:8.0.2")
     implementation("com.google.firebase:firebase-firestore:24.9.0")
+    implementation ("com.google.firebase:firebase-analytics:17.2.1")
+    implementation ("com.google.firebase:firebase-database:19.2.0")
 
     //Google
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     implementation("com.google.android.material:material:1.9.0")
 
+    //Facebook
+//    implementation("com.facebook.android:facebook-android-sdk:[4,5)")
     //Application
     implementation("androidx.browser:browser:1.0.0")
     implementation("androidx.core:core-ktx:1.9.0")
@@ -60,7 +67,7 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
-    implementation ("com.squareup.picasso:picasso:2.8")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.squareup.picasso:picasso:2.8")
 
 }

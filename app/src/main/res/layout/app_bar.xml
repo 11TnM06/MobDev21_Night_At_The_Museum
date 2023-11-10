@@ -8,6 +8,7 @@
     android:layout_height="wrap_content"
     >
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constRealMainActionBar"
         android:layout_width="match_parent"
@@ -18,11 +19,13 @@
 
         <ImageView
             android:id="@+id/backButton"
+
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="?android:attr/actionBarItemBackground"
             android:padding="@dimen/dimen_18"
             android:src="@drawable/ic_back_main_black"
+
             app:layout_constraintDimensionRatio="H, 1:1"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -48,6 +51,7 @@
 <!--            android:src="@drawable/ic_cast_main_black"-->
 <!--            app:layout_constraintDimensionRatio="H, 1:1"-->
 <!--            app:layout_constraintEnd_toStartOf="@id/ivRealMainProfile" />-->
+
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivRealMainProfile"

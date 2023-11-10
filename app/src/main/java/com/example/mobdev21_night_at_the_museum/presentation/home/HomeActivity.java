@@ -4,14 +4,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobdev21_night_at_the_museum.R;
 import com.google.firebase.FirebaseApp;
-
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.squareup.picasso.Picasso;
@@ -23,9 +22,10 @@ public class HomeActivity extends AppCompatActivity {
     LinearLayoutManager linearLayoutManager, linearLayoutManager1;
     StreetViewAdapter streetAdapter;
     CollectionsAdapter collectionsAdapter;
-    ArrayList<String> museumImg, museumName, museumPlace;
-    ArrayList<String> picCollections;
+    ArrayList<DocumentSnapshot> picCollections;
     ArrayList<ImageView> homeCollections;
+    ArrayList<String> museumCollection;
+    ArrayList<DocumentSnapshot> museum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +38,10 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void initializeViews() {
-        museumImg = new ArrayList<>();
-        museumName = new ArrayList<>();
-        museumPlace = new ArrayList<>();
+        museum = new ArrayList<>();
         picCollections = new ArrayList<>();
         homeCollections = new ArrayList<>();
+        museumCollection = new ArrayList<>();
 
         homeCollections.add(findViewById(R.id.ivHomeCollection1));
         homeCollections.add(findViewById(R.id.ivHomeCollection2));
@@ -55,12 +54,12 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setupAdapters() {
-        collectionsAdapter = new CollectionsAdapter(picCollections);
+        collectionsAdapter = new CollectionsAdapter(picCollections, getApplicationContext());
         linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         collectionView.setLayoutManager(linearLayoutManager1);
         collectionView.setAdapter(collectionsAdapter);
 
-        streetAdapter = new StreetViewAdapter(museumName, museumPlace, museumImg);
+        streetAdapter = new StreetViewAdapter(museum, getApplicationContext());
         linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         museumView.setLayoutManager(linearLayoutManager);
         museumView.setAdapter(streetAdapter);
@@ -73,11 +72,11 @@ public class HomeActivity extends AppCompatActivity {
         db.collection("collections").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
-                    String thumbnailData = document.getString("thumbnail");
-                    picCollections.add(thumbnailData);
+                    museumCollection.add(document.get("thumbnail").toString());
+                    picCollections.add(document);
                 }
                 collectionsAdapter.notifyDataSetChanged();
-                loadFavCollections(picCollections, homeCollections);
+                loadFavCollections(museumCollection, homeCollections);
             } else {
                 Log.e("Firestore Data", "Error getting documents: " + task.getException());
             }
@@ -86,15 +85,11 @@ public class HomeActivity extends AppCompatActivity {
         db.collection("exhibitions").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
-                    String thumbnailData = document.getString("thumbnail");
-                    String nameData = document.getString("name");
-                    String placeData = document.getString("place");
-                    museumImg.add(thumbnailData);
-                    museumName.add(nameData);
-                    museumPlace.add(placeData);
+                    museum.add(document);
                 }
                 streetAdapter.notifyDataSetChanged();
             } else {
+
                 Log.e("Firestore Data", "Error getting documents: " + task.getException());
             }
         });

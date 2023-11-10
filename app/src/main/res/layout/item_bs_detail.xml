@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        tools:layout_marginTop="@dimen/dimen_30">
+
+        <FrameLayout
+            android:id="@+id/flItemDetailTitleContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:selectableItemBackground"
+            tools:background="@color/gray_super_light">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1"
+                android:layout_gravity="top"
+                android:layout_marginHorizontal="@dimen/dimen_30"
+                android:background="@color/gray_light" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginVertical="@dimen/dimen_30"
+                android:layout_marginStart="@dimen/dimen_30"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/detail"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_24" />
+
+            <ImageView
+                android:id="@+id/ivItemDetailTitleArrow"
+                android:layout_width="@dimen/dimen_36"
+                android:layout_height="@dimen/dimen_36"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="@dimen/dimen_24"
+                android:src="@drawable/ic_arrow_down" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/dimen_82">
+
+            <TextView
+                android:id="@+id/tvbsDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dimen_30"
+                android:layout_marginStart="@dimen/dimen_30"
+                android:visibility="gone"
+                tools:text="@string/detail" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+</LinearLayout>
