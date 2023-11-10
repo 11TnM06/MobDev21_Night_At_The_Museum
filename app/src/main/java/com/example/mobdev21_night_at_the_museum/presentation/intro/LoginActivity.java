@@ -1,17 +1,15 @@
 package com.example.mobdev21_night_at_the_museum.presentation.intro;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobdev21_night_at_the_museum.R;
@@ -21,159 +19,165 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-/*
-@TODO Facebook Login
- */
+import java.util.HashMap;
+import java.util.Map;
+
 public class LoginActivity extends AppCompatActivity {
-    EditText mEmail, mPassword;
-    MaterialCardView loginWithEmailAndPassword;
+    // Constants
     private static final String TAG = "Authentication";
-    private final String TOKEN_ID = "792900083869-59hul96s0k7e4t55k6pi15mapiicdqn9.apps.googleusercontent.com";
+    private static final String PREF_NAME = "MUSEUM";
+    private static final String KEY_USER_EMAIL = "user_email";
+    private static final String KEY_USER_PASSWORD = "user_password";
+    private static final String TOKEN_ID = "792900083869-59hul96s0k7e4t55k6pi15mapiicdqn9.apps.googleusercontent.com";
     private static final int RC_SIGN_IN = 9001;
+
+    // Views
+    private EditText mEmail, mPassword;
+    private LinearLayout googleSignIn;
+    private TextView register;
+
+    // Firebase instances
     private FirebaseAuth mAuth;
-    private LinearLayout googleSignIn, FacebookSignIn;
     private GoogleSignInClient mGoogleSignInClient;
-    boolean show;
-    TextView register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro2_login_fragment);
+        initializeViews();
+        initializeFirebase();
+        setOnClickListeners();
+        automaticSignIn();
+        Log.d("SharedPreferences", "Auto Login");
+    }
 
-        show = false;
-        register = findViewById(R.id.tvLoginSignUp);
-        mAuth = FirebaseAuth.getInstance();
-        mEmail = findViewById(R.id.etLoginEmail);
-        mPassword = findViewById(R.id.etLoginPassword);
-        FacebookSignIn = findViewById(R.id.llLoginFb);
+    // Initialize views
+    private void initializeViews() {
+        mEmail = findViewById(R.id.etvLoginEmail);
+        mPassword = findViewById(R.id.etvLoginPassword);
         googleSignIn = findViewById(R.id.llLoginGoogle);
+        register = findViewById(R.id.tvLoginSignUp);
+    }
 
-        //GOOGLE_AUTH_INIT
+    // Initialize Firebase instances
+    private void initializeFirebase() {
+        mAuth = FirebaseAuth.getInstance();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(TOKEN_ID)
                 .requestEmail()
                 .build();
-
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        googleSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-                mGoogleSignInClient.revokeAccess();
-                startActivityForResult(signInIntent, RC_SIGN_IN);
-            }
-        });
-        //EMAIL AND PASSWORD
-        loginWithEmailAndPassword = findViewById(R.id.btnLogin);
-        loginWithEmailAndPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email = String.valueOf(mEmail.getText());
-                String password = String.valueOf(mPassword.getText());
-                signInWithEmailAndPassword(email, password);
-            }
-        });
-        //To Register
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            Intent toMainScreen = new Intent(getApplicationContext(), HomeActivity.class);
-            startActivity(toMainScreen);
-            finish();
-        }
-    }
-
-
-    //SIGN_IN WITH EMAIL AND PASSWORD
-    private void signInWithEmailAndPassword(String email, String password) {
-
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    toHomeScreen();
-                } else {
-                    redirectToLogin();
-                    Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-                }
-            }
+    // Set click listeners
+    private void setOnClickListeners() {
+        googleSignIn.setOnClickListener(v -> startGoogleSignIn());
+        findViewById(R.id.btnLogin).setOnClickListener(view -> {
+            String email = mEmail.getText().toString();
+            String password = mPassword.getText().toString();
+            signInWithCredentials(email, password);
         });
-
+        register.setOnClickListener(v -> toRegister());
     }
 
-
-    public void showPassword(View view) {
-        if (!show) {
-            mPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-            show = true;
-        } else {
-            mPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-            show = false;
-        }
+    // Sign in with email and password
+    private void signInWithCredentials(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        saveUserLoginData(email, password);
+                        Log.d("SharedPreferences", "Saved User Info");
+                        toHomeScreen();
+                    } else {
+                        toIntroduction();
+                        Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
-    //GOOGLE_SIGN_IN
+    // Start Google Sign-In
+    private void startGoogleSignIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        mGoogleSignInClient.revokeAccess();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    // Handle Google Sign-In result
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
-                firebaseAuthWithGoogle(account);
-            } catch (ApiException e) {
-
-                Log.w(TAG, "Google sign in failed", e);
-            }
+            handleGoogleSignInResult(data);
         }
     }
 
+    // Handling Google Sign-In result
+    private void handleGoogleSignInResult(Intent data) {
+        Task<GoogleSignInAccount> signInTask = GoogleSignIn.getSignedInAccountFromIntent(data);
+        try {
+            GoogleSignInAccount account = signInTask.getResult(ApiException.class);
+            String email = account.getEmail();
+            FirebaseFirestore db = FirebaseFirestore.getInstance();
+            DocumentReference docRef = db.collection("users").document(email);
+            docRef.get().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(), "User already exists", Toast.LENGTH_SHORT).show();
+                } else {
+                    firebaseAuthWithGoogle(account);
+                }
+            });
+        } catch (ApiException e) {
+            Log.w(TAG, "Google sign in failed", e);
+        }
+    }
+
+    // Firebase authentication with Google credentials
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
-        mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Log.d(TAG, "signInWithCredential:success");
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    if (task.getResult().getAdditionalUserInfo().isNewUser()) {
-                        Toast.makeText(getApplicationContext(), "User created", Toast.LENGTH_SHORT).show();
-                    }
-                    toHomeScreen();
-                } else {
-                    redirectToLogin();
-                    Log.w(TAG, "signInWithCredential:failure", task.getException());
+        mAuth.signInWithCredential(credential).addOnCompleteListener(this, authResultTask -> {
+            if (authResultTask.isSuccessful()) {
+                if (authResultTask.getResult().getAdditionalUserInfo().isNewUser()) {
+                    createNewUserInFirestore();
                 }
+                toHomeScreen();
+            } else {
+                toIntroduction();
+                Log.w(TAG, "signInWithCredential:failure", authResultTask.getException());
             }
         });
     }
 
+    // Create a new user in Firestore
+    private void createNewUserInFirestore() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        Map<String, Object> userData = new HashMap<>();
+        userData.put("avatar", null);
+        userData.put("fcollections", null);
+        userData.put("fitems", null);
+        userData.put("fstories", null);
+        userData.put("name", null);
+        db.collection("users").document(user.getEmail())
+                .set(userData)
+                .addOnSuccessListener(aVoid -> {
+                    Log.d(TAG, "DocumentSnapshot successfully written!");
+                    toLogin();
+                })
+                .addOnFailureListener(e -> {
+                    Log.w(TAG, "Error writing document", e);
+                    // Handle the Firestore write failure
+                });
+    }
+
+    // Navigation methods
     private void toRegister() {
         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
         startActivity(intent);
@@ -184,10 +188,45 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(homeScreen);
     }
 
-    //COMMON FUNCTION
-    public void redirectToLogin() {
+    private void toLogin() {
+        Intent toLogin = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(toLogin);
+        finish();
+    }
+
+    private void toIntroduction() {
         Intent toMainScreen = new Intent(getApplicationContext(), IntroductionActivity.class);
         startActivity(toMainScreen);
         finish();
     }
+
+    // SharedPreferences methods
+    public void saveUserLoginData(String email, String password) {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_USER_EMAIL, email);
+        editor.putString(KEY_USER_PASSWORD, password);
+        editor.apply();
+    }
+
+    public void automaticSignIn() {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        String email = sharedPreferences.getString(KEY_USER_EMAIL, null);
+        String password = sharedPreferences.getString(KEY_USER_PASSWORD, null);
+        Log.d("PreferenceEmail", email);
+        Log.d("PreferPass", password);
+        if (email == null || password == null) {
+            return;
+        }
+        signInWithCredentials(email, password);
+    }
+
+    public void clearUserLoginData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(KEY_USER_EMAIL);
+        editor.remove(KEY_USER_PASSWORD);
+        editor.apply();
+    }
 }
+

@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_regular"
             android:gravity="center"
-            android:text="@string/follow_your_favorite"
+            android:text="@string/follow_your_museum"
             android:textColor="@color/main_black"
             android:textSize="@dimen/dimen_text_size_24" />
 
