@@ -4,7 +4,7 @@ import com.example.mobdev21_night_at_the_museum.domain.model.Story
 import com.example.mobdev21_night_at_the_museum.domain.model.StoryDetailModel
 
 object Constants {
-    fun getStoryData():ArrayList<Story>{
+    fun getStoryData():ArrayList<StoryDetailModel>{
         // create an arraylist of type employee class
         val employeeList=ArrayList<Story>()
         val storyDetailModels : ArrayList<StoryDetailModel> = ArrayList<StoryDetailModel>()
@@ -32,6 +32,6 @@ object Constants {
         employeeList.add(emp3)
         employeeList.add(emp4)
 
-        return  employeeList
+        return  storyDetailModels
     }
 }

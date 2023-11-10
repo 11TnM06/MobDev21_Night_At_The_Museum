@@ -3,7 +3,10 @@ package com.example.mobdev21_night_at_the_museum.presentation.story.storydetail
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.signature.ObjectKey
@@ -16,10 +19,31 @@ class StoryDetailAdapter (private val storyDetailModels : ArrayList<StoryDetailM
         //        val textView: TextView
         val imageView : ImageView
 //        val tvStoryTitle : TextView
+        private lateinit var heart : ImageView
+
 
         init {
             // Define click listener for the ViewHolder's Vie
             imageView = view.findViewById(R.id.story_detail_image)
+            var parent : StoryDetailActivity = StoryDetailActivity()
+//            if (isLiked) {
+//                    heart.setImageResource(R.drawable.ic_like)
+//                    isLiked = false
+//
+//                } else {
+//                    heart.setImageResource(R.drawable.ic_like_filled)
+//                    isLiked = true
+//                }
+//            heart.setOnClickListener {
+//                if (isLiked) {
+//                    heart.setImageResource(R.drawable.ic_like)
+//                    isLiked = false
+//
+//                } else {
+//                    heart.setImageResource(R.drawable.ic_like_filled)
+//                    isLiked = true
+//                }
+//            }
 //            tvStoryTitle = view.findViewById(R.id.tvStoryTitle)
 //            textView = view.findViewById(.id.textView)
         }
