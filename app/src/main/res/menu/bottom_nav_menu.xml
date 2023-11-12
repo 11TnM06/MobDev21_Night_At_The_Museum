@@ -24,6 +24,6 @@
     <item
         android:id="@+id/iBottomNavGame"
         android:icon="@drawable/ic_game"
-        android:title="TODO: not game"/>
+        android:title="@string/game"/>
 
 </menu>
