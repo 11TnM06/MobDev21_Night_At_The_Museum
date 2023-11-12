@@ -1,5 +1,6 @@
 package com.example.mobdev21_night_at_the_museum.presentation.collection;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,24 +10,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mobdev21_night_at_the_museum.R;
-import com.example.mobdev21_night_at_the_museum.presentation.home.CollectionsAdapter;
 import com.example.mobdev21_night_at_the_museum.presentation.home.StreetViewAdapter;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import androidx.recyclerview.widget.GridLayoutManager;
 
 public class CollectionActivity extends AppCompatActivity {
     RecyclerView storyView, itemView, streetView;
@@ -36,25 +33,25 @@ public class CollectionActivity extends AppCompatActivity {
     CollectionStoryAdapter collectionStoryAdapter;
     CollectionStreetViewAdapter collectionStreetViewAdapter;
     CollectionItemAdapter collectionItemAdapter;
-    ImageAdapter imageAdapter;
 
     TextView tvMuseumName, tvMuseumPlace, tvMuseumDescription, tvReadMore, tvReadLess, tvCollectionStoriesViewAll;
     ImageView ivMuseumIcon, ivMuseumThumbnail;
 
-    LinearLayout llCollectionHeaderFollow,llCollectionHeaderFollowing;
+    LinearLayout llCollectionHeaderFollow, llCollectionHeaderFollowing;
     ArrayList<Story> storyList;
     ArrayList<Item> itemList;
     ArrayList<StreetView> streetViewList;
 
     ArrayList<String> itemThumbnailList;
 
-    String collectionId = "aCziNZYzC09cCeqizUAv";
+    String collectionId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collection);
-
+        Intent i = getIntent();
+        collectionId = i.getStringExtra("id");
         initializeViews();
         setupAdapters();
         setupHandlers();
@@ -155,8 +152,6 @@ public class CollectionActivity extends AppCompatActivity {
     private void fetchDataFromFirestore() {
         FirebaseApp.initializeApp(this);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-
 
 
         db.collection("collections").document(collectionId).get().addOnCompleteListener(task -> {

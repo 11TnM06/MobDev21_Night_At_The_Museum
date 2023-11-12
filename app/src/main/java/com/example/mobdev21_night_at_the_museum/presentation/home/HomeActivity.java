@@ -1,5 +1,6 @@
 package com.example.mobdev21_night_at_the_museum.presentation.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobdev21_night_at_the_museum.R;
+import com.example.mobdev21_night_at_the_museum.presentation.collection.CollectionActivity;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,7 +26,7 @@ public class HomeActivity extends AppCompatActivity {
     CollectionsAdapter collectionsAdapter;
     ArrayList<DocumentSnapshot> picCollections;
     ArrayList<ImageView> homeCollections;
-    ArrayList<String> museumCollection;
+    ArrayList<DocumentSnapshot> museumCollection;
     ArrayList<DocumentSnapshot> museum;
 
     @Override
@@ -72,7 +74,7 @@ public class HomeActivity extends AppCompatActivity {
         db.collection("collections").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
-                    museumCollection.add(document.get("thumbnail").toString());
+                    museumCollection.add(document);
                     picCollections.add(document);
                 }
                 collectionsAdapter.notifyDataSetChanged();
@@ -95,9 +97,15 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    public void loadFavCollections(ArrayList<String> thumbnail, ArrayList<ImageView> homeCollections) {
+    public void loadFavCollections(ArrayList<DocumentSnapshot> thumbnail, ArrayList<ImageView> homeCollections) {
         for (int i = 0; i < 5 && i < thumbnail.size() && i < homeCollections.size(); i++) {
-            Picasso.get().load(thumbnail.get(i)).into(homeCollections.get(i));
+            Picasso.get().load(thumbnail.get(i).get("thumbnail").toString()).into(homeCollections.get(i));
+            int finalI = i;
+            homeCollections.get(i).setOnClickListener(view -> {
+                Intent toCollectionActivity = new Intent(getApplicationContext(), CollectionActivity.class);
+                toCollectionActivity.putExtra("id", thumbnail.get(finalI).getId());
+                startActivity(toCollectionActivity);
+            });
         }
     }
 }
