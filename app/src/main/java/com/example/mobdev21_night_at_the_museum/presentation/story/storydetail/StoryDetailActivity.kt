@@ -28,7 +28,7 @@ class StoryDetailActivity : AppCompatActivity() {
     private lateinit var fStories : ArrayList<String>
     private lateinit var userDocRef : DocumentReference
     private var isLiked = false
-    private val storyId = "17KxqSvqhxrGGqbqGm9A"
+    private var storyId = "17KxqSvqhxrGGqbqGm9A"
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -134,6 +134,9 @@ class StoryDetailActivity : AppCompatActivity() {
             }
     }
     private fun fetchDataFromFirestore() {
+        if (!intent.getStringExtra("storyId").toString().isNullOrBlank()) {
+            storyId = intent.getStringExtra("storyId").toString()
+        }
         FirebaseApp.initializeApp(this)
         val db = FirebaseFirestore.getInstance()
         userDocRef = db.collection("users").document("fZx3P0RpgvFIKz6kSFsk")
