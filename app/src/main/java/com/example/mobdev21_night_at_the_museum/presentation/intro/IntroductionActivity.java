@@ -20,10 +20,12 @@ public class IntroductionActivity extends AppCompatActivity {
         login.setOnClickListener(view -> {
             Intent toLogin = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(toLogin);
+            finish();
         });
         register.setOnClickListener(view -> {
             Intent toSignUp = new Intent(getApplicationContext(), RegisterActivity.class);
             startActivity(toSignUp);
+            finish();
         });
     }
 }
