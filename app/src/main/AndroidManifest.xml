@@ -42,6 +42,10 @@
             android:name=".presentation.item.ItemActivity"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".presentation.collection.CollectionActivity"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"
+            android:exported="false" />
     </application>
 
 </manifest>
