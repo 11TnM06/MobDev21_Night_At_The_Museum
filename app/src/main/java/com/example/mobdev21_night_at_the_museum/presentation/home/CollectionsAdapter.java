@@ -1,6 +1,7 @@
 package com.example.mobdev21_night_at_the_museum.presentation.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobdev21_night_at_the_museum.R;
+import com.example.mobdev21_night_at_the_museum.presentation.collection.CollectionActivity;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.squareup.picasso.Picasso;
 
@@ -40,8 +42,14 @@ public class CollectionsAdapter extends RecyclerView.Adapter<CollectionsAdapter.
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
                     Toast.makeText(context.getApplicationContext(), "Item clicked" + holder.getAdapterPosition(), Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(context, CollectionActivity.class);
+                    intent.putExtra("collectionIdFromHome", picCollections.get(position).get("key").toString());
+
+                    // Start the activity using the created intent
+                    context.startActivity(intent);
+
                 }
             });
         }
