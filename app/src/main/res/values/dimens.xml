@@ -153,6 +153,7 @@
     <dimen name="dimen_296">296.00dp</dimen>
     <dimen name="dimen_298">298.00dp</dimen>
     <dimen name="dimen_300">300.00dp</dimen>
+    <dimen name="dimen_350">350.00dp</dimen>
 
 
     <dimen name="dimen_text_size_2">2.00sp</dimen>
