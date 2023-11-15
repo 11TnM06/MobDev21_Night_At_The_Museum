@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Intent introductionScreen = new Intent(getApplicationContext(), IntroductionActivity.class);
         startActivity(introductionScreen);
-
+        finish();
 //        Intent intent = new Intent(this, ItemActivity.class);
 //        startActivity(intent);
     }
