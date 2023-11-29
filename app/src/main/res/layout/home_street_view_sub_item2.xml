@@ -25,8 +25,9 @@
                     android:id="@+id/ivHomeStreetViewThumbnail"
                     android:layout_width="@dimen/dimen_200"
                     android:layout_height="@dimen/dimen_200"
+                    android:scaleType="centerCrop"
                     app:shapeAppearanceOverlay="@style/CircleImageView"
-                    tools:src="@drawable/img_1" />
+                    tools:src="@color/black" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="@dimen/dimen_48"
@@ -76,6 +77,7 @@
                 android:fontFamily="@font/roboto_regular"
                 android:textColor="@color/gray"
                 android:textSize="@dimen/dimen_text_size_16"
+                android:visibility="gone"
                 tools:text="South Korea" />
 
         </LinearLayout>

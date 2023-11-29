@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="?android:attr/actionBarSize">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpStory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="horizontal" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_100"
+            android:background="@drawable/bg_shadow">
+
+            <com.example.mobdev21_night_at_the_museum.presentation.widget.CollectionView
+                android:id="@+id/cvStoryLine"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_2"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:layout_marginBottom="@dimen/dimen_14" />
+
+            <ImageView
+                android:id="@+id/ivStoryLike"
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="@dimen/dimen_48"
+                android:layout_below="@id/cvStoryLine"
+                android:layout_toStartOf="@id/ivStoryShare"
+                android:background="?android:attr/actionBarItemBackground"
+                android:padding="@dimen/dimen_10"
+                android:src="@drawable/ic_like" />
+
+            <ImageView
+                android:id="@+id/ivStoryShare"
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="@dimen/dimen_48"
+                android:layout_below="@id/cvStoryLine"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:background="?android:attr/actionBarItemBackground"
+                android:padding="@dimen/dimen_10"
+                android:src="@drawable/ic_share" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+</layout>

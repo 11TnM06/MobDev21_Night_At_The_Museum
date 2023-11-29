@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">Night At The Museum</string>
-    <string name="login">Đăng nhập</string>
-    <string name="signup">Đăng ký</string>
-    <string name="detail">Chi tiết</string>
     <string name="no_network">Vui lòng kiểm tra lại kết nối và thử lại</string>
     <string name="server_time_out">Server không phản hồi</string>
     <string name="convert_response_error">Lỗi convert response từ server</string>
@@ -10,7 +7,7 @@
     <string name="loading">Đang tải…!</string>
     <string name="explore_button">Khám phá bảo tàng</string>
     <string name="hello">Xin chào</string>
-    <string name="manage_your_tiger_account">Quản lý tài khoản của bạn</string>
+    <string name="manage_your_MobDev_account">Quản lý tài khoản của bạn</string>
     <string name="achievement">Thành tích</string>
     <string name="collections">Bộ sưu tập</string>
     <string name="nearby">Gần đây</string>
@@ -22,21 +19,22 @@
     <string name="terms_of_service">Điều khoản dịch vụ</string>
     <string name="privacy_policy_terms_of_service">Chính sách bảo mật   •   Điều khoản dịch vụ</string>
     <string name="dot">•</string>
-    <string name="tiger">Tiger</string>
-    <string name="email_example">ghetnhungthangdattenvovan@gmail.com</string>
-    <string name="full_name_example">Đoàn Thanh Sơn</string>
+    <string name="MobDev">""</string>
+    <string name="email_example">hoangducmanh123@gmail.com</string>
+    <string name="full_name_example">Hoàng Đức Mạnh</string>
     <string name="home">Trang chủ</string>
     <string name="explore">Khám phá</string>
     <string name="favorite">Yêu thích</string>
     <string name="game">Trò chơi</string>
     <string name="download">Tải xuống</string>
     <string name="galleries">Thư viện</string>
-    <string name="items">Mục</string>
+    <string name="items">Hiện vật</string>
     <string name="stories">Câu chuyện</string>
     <string name="stories_lower_case">câu chuyện</string>
     <string name="view_all">Xem tất cả</string>
     <string name="online_exhibit">triển lãm trực tuyến</string>
     <string name="input_user_name">Nhập tên đăng nhập</string>
+    <string name="login">Đăng nhập</string>
     <string name="input_password">Nhập mật khẩu</string>
     <string name="save_account">Lưu tài khoản</string>
     <string name="login3rd">Hoặc đăng nhập với</string>
@@ -49,7 +47,7 @@
     <string name="forgot_password">Quên mật khẩu?</string>
     <string name="dont_have_account">Chưa có tài khoản?</string>
     <string name="have_account">Đã có tài khoản?</string>
-    <string name="welcome_to_app">Chào mừng đến với Tiger Museum AR</string>
+    <string name="welcome_to_app">Chào mừng đến với MobDev Museum AR</string>
     <string name="account_does_not_exist">"Tài khoản không tồn tại"</string>
     <string name="wrong_password">"Sai mật khẩu"</string>
     <string name="sign_in_fail">Đăng nhập thất bại</string>
@@ -68,12 +66,12 @@
     <string name="content_updates_description">Thông báo khi nội dung được thêm vào chủ đề và bộ sưu tập yêu thích của bạn</string>
     <string name="weekly_highlight_email_description">Khám phá tổng hợp các lựa chọn hàng đầu hàng tuần từ biên tập viên</string>
     <string name="special_announcement">Thông báo dịp đặc biệt</string>
-    <string name="special_announcement_description">Cập nhật thông tin về các dự án và tính năng mới nhất từ Tiger Museum AR</string>
+    <string name="special_announcement_description">Cập nhật thông tin về các dự án và tính năng mới nhất từ MobDev Museum AR</string>
     <string name="emails">Emails</string>
     <string name="offline_content">Nội dung tải xuống</string>
     <string name="manage_offline_content">Quản lý nội dung tải xuống của bạn</string>
     <string name="manage_offline_description">Truy cập và xóa nội dung đã tải xuống trên thiết bị của bạn</string>
-    <string name="about_app">Giới thiệu Tiger Museum AR</string>
+    <string name="about_app">Giới thiệu MobDev Museum</string>
     <string name="about">Giới thiệu</string>
     <string name="open_source_license">Giấy phép nguồn mở</string>
     <string name="version_1">Phiên bản: 1.0.0</string>
@@ -95,9 +93,9 @@
     <string name="pan_camera">pan camera</string>
     <string name="tap_screen">tap screen</string>
     <string name="long_press_screen">long press screen</string>
-    <string name="explore_with_street_view">Khám phá đường đi</string>
+    <string name="explore_with_street_view">Khám phá với chế độ xem phố</string>
     <string name="explore_with_street_view_desc">Từ hậu trường Nhà hát Opera Paris đến đỉnh Taj Mahal</string>
-    <string name="follow_your_museum">Theo dõi bảo tàng yêu thích</string>
+    <string name="follow_your_favorite">Theo dõi bộ sưu tập yêu thích</string>
     <string name="discover_collections">Khám phá các bộ sưu tập</string>
     <string name="visit">Tham quan</string>
     <string name="following">Đang theo dõi</string>
@@ -119,7 +117,7 @@
     <string name="confirm_delete_desc2"> khỏi bộ nhớ thiết bị?</string>
     <string name="no_download_available">Bạn chưa tải xuống mô hình nào.</string>
     <string name="read_less">Rút gọn</string>
-    <string name="recommended_for_you">Hiện vật</string>
+    <string name="recommended_for_you">Các mục gợi ý dành cho bạn</string>
     <string name="no_ticket_link">Không tìm thấy đường dẫn</string>
     <string name="search">Tìm kiếm</string>
 </resources>

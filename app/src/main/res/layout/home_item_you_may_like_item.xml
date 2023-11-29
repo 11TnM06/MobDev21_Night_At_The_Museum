@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_30"
+        android:background="@color/white"
+        android:orientation="vertical">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/ivPicCollection"
-        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
-        android:layout_width="@dimen/dimen_300"
-        android:layout_height="@dimen/dimen_200"
-        android:paddingEnd="@dimen/dimen_4"
-        android:scaleType="centerCrop" />
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="@string/recommended_for_you"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/dimen_text_size_26" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCollectionsStories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_14"
+            android:clipToPadding="false"
+            android:paddingHorizontal="@dimen/dimen_20" />
+
+    </LinearLayout>
+
+</layout>

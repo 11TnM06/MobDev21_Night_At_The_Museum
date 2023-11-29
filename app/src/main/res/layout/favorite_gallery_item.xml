@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvFavoriteGalleryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_50"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/dimen_text_size_18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Phòng trưng bày 1" />
+
+        <TextView
+            android:id="@+id/tvFavoriteGalleryDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_6"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/dimen_text_size_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFavoriteGalleryTitle"
+            tools:text="Mô tả cho phòng trưng bày 1" />
+
+        <TextView
+            android:id="@+id/tvFavoriteGalleryCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/dimen_text_size_14"
+            app:layout_constraintBottom_toBottomOf="@id/tvFavoriteGalleryTitle"
+            app:layout_constraintStart_toEndOf="@id/tvFavoriteGalleryTitle"
+            app:layout_constraintTop_toTopOf="@id/tvFavoriteGalleryTitle"
+            tools:text="42" />
+
+        <ImageView
+            android:id="@+id/tvFavoriteGalleryMore"
+            android:layout_width="@dimen/dimen_24"
+            android:layout_height="@dimen/dimen_24"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:background="?android:attr/actionBarItemBackground"
+            android:src="@drawable/ic_more_main_black"
+            app:layout_constraintBottom_toBottomOf="@id/tvFavoriteGalleryDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvFavoriteGalleryTitle" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvFavoriteGalleryCountOne"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="H, 1:1"
+            app:layout_constraintTop_toBottomOf="@id/tvFavoriteGalleryDescription">
+
+            <ImageView
+                android:id="@+id/ivFavoriteGalleryCountOne"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@color/black" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/llFavoriteGalleryCountTwo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintDimensionRatio="H, 2:1"
+            app:layout_constraintTop_toBottomOf="@id/tvFavoriteGalleryDescription">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivFavoriteGalleryCountTwo1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/dimen_4"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@color/black"
+                app:shapeAppearanceOverlay="@style/leftCircleImageView" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivFavoriteGalleryCountTwo2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@color/black"
+                app:shapeAppearanceOverlay="@style/rightCircleImageView" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFavoriteGalleryCountThree"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:orientation="horizontal"
+            app:layout_constraintDimensionRatio="H, 3:1"
+            app:layout_constraintTop_toBottomOf="@id/tvFavoriteGalleryDescription">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivFavoriteGalleryCountThree1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/dimen_4"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@color/black"
+                app:shapeAppearanceOverlay="@style/leftCircleImageView" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivFavoriteGalleryCountThree2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/dimen_4"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@color/black" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivFavoriteGalleryCountThree3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/dimen_4"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@color/black"
+                app:shapeAppearanceOverlay="@style/rightCircleImageView" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

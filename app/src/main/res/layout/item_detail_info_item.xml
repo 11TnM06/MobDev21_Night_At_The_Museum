@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvItemDetailInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_30"
+            android:layout_marginBottom="@dimen/dimen_2"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/dimen_text_size_16"
+            tools:text="Title: This is Hoang Duc Manh daskdjsa kjfkasjfkasj kfjsakfjsakfj" />
+
+    </FrameLayout>
+
+</layout>

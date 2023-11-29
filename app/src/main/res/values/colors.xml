@@ -2,18 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="gray_super_light">#EDF0F7</color>
-    <color name="gray_light">#D3D3D3</color>
     <color name="gray">#FF808080</color>
     <color name="main_black">#282828</color>
-    <color name="dark_blue">#253570</color>
-    <color name="blue">#1a73e9</color>
-
     <color name="black_overlay_light">#33000000</color>
     <color name="black_overlay_strong">#80000000</color>
+    <color name="gray_light">#D3D3D3</color>
+    <color name="gray_super_light">#edf0f7</color>
     <color name="red">#ff595e</color>
     <color name="yellow">#ffca3a</color>
     <color name="green">#8ac926</color>
+    <color name="blue">#1a73e9</color>
     <color name="purple">#6a4c93</color>
     <color name="transparent">#00000000</color>
     <color name="gray_icon_bottom_nav">#626364</color>
@@ -22,4 +20,5 @@
     <color name="field_edit_title">#2E2E2E</color>
     <color name="neutral_9">#E3E3E3</color>
     <color name="gray_ripple">#DFDFDF</color>
+    <color name="dark_blue">#253570</color>
 </resources>

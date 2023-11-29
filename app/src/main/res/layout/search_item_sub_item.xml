@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_4">
+
+        <ImageView
+            android:id="@+id/ivSearchItemsSub"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_200"
+            android:adjustViewBounds="true"
+            tools:src="@drawable/bg_login" />
+
+        <View
+            android:id="@+id/vSearchItemSubShading"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_70"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bg_shadow_reverse_strong"
+            tools:layout_width="@dimen/dimen_200" />
+
+        <TextView
+            android:id="@+id/tvSearchItemSubTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+            android:maxLines="2"
+            android:paddingHorizontal="@dimen/dimen_8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_size_18"
+            tools:text="This is afsafsaf fwjqhf fqwhf fsajkf safsak fsafksa fsakj fksa" />
+
+    </FrameLayout>
+
+
+</layout>

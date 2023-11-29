@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvFavoriteItems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginTop="@dimen/dimen_50"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/items"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/dimen_text_size_18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvFavoriteItemsNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/dimen_text_size_14"
+            app:layout_constraintBottom_toBottomOf="@id/tvFavoriteItems"
+            app:layout_constraintStart_toEndOf="@id/tvFavoriteItems"
+            app:layout_constraintTop_toTopOf="@id/tvFavoriteItems"
+            tools:text="42" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/view_all"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/dimen_text_size_14"
+            app:layout_constraintBottom_toBottomOf="@id/tvFavoriteItems"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvFavoriteItems" />
+
+
+        <View
+            android:id="@+id/vFavoriteCenterLine"
+            android:layout_width="@dimen/dimen_1"
+            android:layout_height="@dimen/dimen_100"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/vFavoriteCenterHorizontalLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1"
+            app:layout_constraintBottom_toBottomOf="@id/ivFavoriteItem4"
+            app:layout_constraintTop_toTopOf="@id/ivFavoriteItem4" />
+
+        <View
+            android:id="@+id/vFavoriteCenterQuarterLine"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="@id/ivFavoriteItem1"
+            app:layout_constraintStart_toStartOf="@id/ivFavoriteItem1" />
+
+        <ImageView
+            android:id="@+id/ivFavoriteItem4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_250"
+            android:layout_marginStart="@dimen/dimen_4"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:src="@color/blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vFavoriteCenterLine"
+            app:layout_constraintTop_toBottomOf="@id/tvFavoriteItems" />
+
+        <ImageView
+            android:id="@+id/ivFavoriteItem1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginEnd="@dimen/dimen_4"
+            android:layout_marginBottom="@dimen/dimen_4"
+            android:src="@color/blue"
+            app:layout_constraintBottom_toTopOf="@id/vFavoriteCenterHorizontalLine"
+            app:layout_constraintEnd_toStartOf="@id/vFavoriteCenterLine"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivFavoriteItem4" />
+
+        <ImageView
+            android:id="@+id/ivFavoriteItem2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:layout_marginEnd="@dimen/dimen_4"
+            android:src="@color/blue"
+            app:layout_constraintBottom_toBottomOf="@id/ivFavoriteItem4"
+            app:layout_constraintEnd_toEndOf="@id/vFavoriteCenterQuarterLine"
+            app:layout_constraintStart_toStartOf="@id/ivFavoriteItem1"
+            app:layout_constraintTop_toBottomOf="@id/vFavoriteCenterHorizontalLine" />
+
+        <ImageView
+            android:id="@+id/ivFavoriteItem3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dimen_4"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:layout_marginEnd="@dimen/dimen_4"
+            android:src="@color/blue"
+            app:layout_constraintBottom_toBottomOf="@id/ivFavoriteItem4"
+            app:layout_constraintEnd_toStartOf="@id/vFavoriteCenterLine"
+            app:layout_constraintStart_toEndOf="@id/vFavoriteCenterQuarterLine"
+            app:layout_constraintTop_toBottomOf="@id/vFavoriteCenterHorizontalLine" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
