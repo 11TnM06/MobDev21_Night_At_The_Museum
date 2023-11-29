@@ -130,41 +130,6 @@
 
                 </FrameLayout>
 
-                <FrameLayout
-                    android:id="@+id/flCollectionsTabMap"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/dimen_56"
-                    android:layout_weight="1"
-                    android:background="?android:selectableItemBackground">
-
-                    <TextView
-                        android:id="@+id/tvCollectionsTabMap"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/roboto_medium"
-                        android:text="@string/map"
-                        android:textColor="@color/gray"
-                        android:textSize="@dimen/dimen_text_size_16" />
-
-                    <View
-                        android:id="@+id/vCollectionsTabMapDisable"
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_gravity="bottom"
-                        android:background="@color/gray_light"
-                        android:visibility="gone" />
-
-                    <View
-                        android:id="@+id/vCollectionsTabMapEnable"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_gravity="bottom"
-                        android:background="@color/blue"
-                        android:visibility="gone" />
-
-                </FrameLayout>
-
             </LinearLayout>
 
         </LinearLayout>

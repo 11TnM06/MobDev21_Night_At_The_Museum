@@ -61,10 +61,6 @@ class CollectionsFragment: MuseumFragment<CollectionsFragmentBinding>(R.layout.c
             binding.vpCollections.setCurrentItem(1, false)
         }
 
-        binding.flCollectionsTabMap.setOnSafeClick {
-            setTab(COLLECTION_TAB.MAP)
-            binding.vpCollections.setCurrentItem(2, false)
-        }
     }
 
     private fun setTab(tab: COLLECTION_TAB) {
@@ -78,27 +74,21 @@ class CollectionsFragment: MuseumFragment<CollectionsFragmentBinding>(R.layout.c
     private fun selectTabAll() {
         binding.vCollectionsTabAllEnable.show()
         binding.vCollectionsTabAZEnable.gone()
-        binding.vCollectionsTabMapEnable.gone()
         binding.tvCollectionsTabAll.setTextColor(getAppColor(R.color.main_black))
         binding.tvCollectionsTabAZ.setTextColor(getAppColor(R.color.gray))
-        binding.tvCollectionsTabMap.setTextColor(getAppColor(R.color.gray))
     }
 
     private fun selectTabAZ() {
         binding.vCollectionsTabAllEnable.gone()
         binding.vCollectionsTabAZEnable.show()
-        binding.vCollectionsTabMapEnable.gone()
         binding.tvCollectionsTabAll.setTextColor(getAppColor(R.color.gray))
         binding.tvCollectionsTabAZ.setTextColor(getAppColor(R.color.main_black))
-        binding.tvCollectionsTabMap.setTextColor(getAppColor(R.color.gray))
     }
 
     private fun selectTabMap() {
         binding.vCollectionsTabAllEnable.gone()
         binding.vCollectionsTabAZEnable.gone()
-        binding.vCollectionsTabMapEnable.show()
         binding.tvCollectionsTabAll.setTextColor(getAppColor(R.color.gray))
         binding.tvCollectionsTabAZ.setTextColor(getAppColor(R.color.gray))
-        binding.tvCollectionsTabMap.setTextColor(getAppColor(R.color.main_black))
     }
 }
