@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.example.mobdev21_night_at_the_museum.presentation.widget.CustomViewPager
+            android:id="@+id/vpCollections"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llCollectionsHeader" />
+
+        <View
+            android:id="@+id/vCollectionsLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_6"
+            app:layout_constraintTop_toBottomOf="@id/llCollectionsHeader" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dimen_100"
+            android:background="@drawable/bg_shadow"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/vCollectionsLine"
+            app:layout_constraintTop_toTopOf="@id/llCollectionsHeader" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_light"
+            app:layout_constraintTop_toBottomOf="@id/llCollectionsHeader" />
+
+        <LinearLayout
+            android:id="@+id/llCollectionsHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?android:attr/actionBarSize"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="@dimen/dimen_30"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/collections"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_30" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/flCollectionsTabAll"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_56"
+                    android:layout_weight="1"
+                    android:background="?android:selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/tvCollectionsTabAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/all"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/dimen_text_size_16" />
+
+                    <View
+                        android:id="@+id/vCollectionsTabAllEnable"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/blue" />
+
+                    <View
+                        android:id="@+id/vCollectionsTabAllDisable"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/gray_light"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/flCollectionsTabAZ"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_56"
+                    android:layout_weight="1"
+                    android:background="?android:selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/tvCollectionsTabAZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/az"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/dimen_text_size_16" />
+
+                    <View
+                        android:id="@+id/vCollectionsTabAZDisable"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/gray_light"
+                        android:visibility="gone" />
+
+                    <View
+                        android:id="@+id/vCollectionsTabAZEnable"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/blue"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/flCollectionsTabMap"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_56"
+                    android:layout_weight="1"
+                    android:background="?android:selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/tvCollectionsTabMap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="@string/map"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/dimen_text_size_16" />
+
+                    <View
+                        android:id="@+id/vCollectionsTabMapDisable"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/gray_light"
+                        android:visibility="gone" />
+
+                    <View
+                        android:id="@+id/vCollectionsTabMapEnable"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/blue"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

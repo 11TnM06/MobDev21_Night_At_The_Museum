@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_30"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCollectionStoriesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/collections"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/dimen_text_size_20" />
+
+        <com.example.mobdev21_night_at_the_museum.presentation.widget.CollectionView
+            android:id="@+id/cvSearchCollectionItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_14"
+            android:clipToPadding="false"
+            android:paddingHorizontal="@dimen/dimen_16" />
+
+    </LinearLayout>
+
+</layout>

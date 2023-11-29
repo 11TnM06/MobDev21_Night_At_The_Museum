@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:id="@+id/flView3dOptionContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_margin="@dimen/dimen_30"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/dimen_corner_4"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvView3dOptionModelInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_52"
+                    android:background="?android:selectableItemBackground"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/dimen_16"
+                    android:text="Thông tin mô hình"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/dimen_text_size_16" />
+
+                <TextView
+                    android:id="@+id/tvView3dOptionDownload"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_52"
+                    android:background="?android:selectableItemBackground"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="@dimen/dimen_16"
+                    android:text="Quản lý tải xuống"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/dimen_text_size_16" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </FrameLayout>
+
+</layout>

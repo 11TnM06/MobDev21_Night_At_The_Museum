@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/dimen_160"
+        android:layout_height="@dimen/dimen_160"
+        app:cardCornerRadius="@dimen/dimen_corner_8"
+        android:layout_marginHorizontal="@dimen/dimen_6">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivItemRecommendSub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@color/gray" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_shadow_reverse" />
+
+        <TextView
+            android:id="@+id/tvItemRecommendSubName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="@dimen/dimen_16"
+            android:layout_marginBottom="@dimen/dimen_16"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_medium"
+            android:maxLines="2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_size_16"
+            tools:text="Day la ten cua mot item sieu dai sieu dai Day la ten cuar 1 item" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

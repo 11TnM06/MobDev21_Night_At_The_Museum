@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_168">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_100"
+            android:background="@drawable/bg_shadow_reverse" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_160"
+            android:layout_gravity="bottom"
+            android:background="@drawable/shape_rectangle_white_bg_corner_top_16">
+
+            <TextView
+                android:id="@+id/tvItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_30"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_18"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Dying Knight or The Partisan" />
+
+            <TextView
+                android:id="@+id/tvItemCreator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_30"
+                android:layout_marginTop="@dimen/dimen_2"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/dimen_text_size_16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvItemName"
+                tools:text="Venazo Crocetti  1947" />
+
+            <ImageView
+                android:id="@+id/ivItemLike"
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="@dimen/dimen_48"
+                android:layout_marginStart="@dimen/dimen_22"
+                android:background="?android:attr/actionBarItemBackground"
+                android:padding="@dimen/dimen_10"
+                android:src="@drawable/ic_like_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivItemShare"
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="@dimen/dimen_48"
+                android:layout_marginStart="@dimen/dimen_4"
+                android:background="?android:attr/actionBarItemBackground"
+                android:padding="@dimen/dimen_10"
+                android:src="@drawable/ic_share_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivItemLike" />
+
+            <ImageView
+                android:id="@+id/ivItemCollectionThumb"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginEnd="@dimen/dimen_30"
+                android:layout_marginBottom="@dimen/dimen_6"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toTopOf="@id/tvItemCollection"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvItemCreator"
+                tools:src="@drawable/bg_login" />
+
+            <TextView
+                android:id="@+id/tvItemCollection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_50"
+                android:layout_marginEnd="@dimen/dimen_30"
+                android:layout_marginBottom="@dimen/dimen_10"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="end"
+                android:maxLines="1"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/dimen_text_size_14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivItemShare"
+                tools:text="Foundation Venazo Crocetti Foundadsaf as" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+</layout>

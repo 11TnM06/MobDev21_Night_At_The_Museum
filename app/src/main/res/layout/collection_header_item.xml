@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivCollectionHeaderThumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="H, 4:3"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/bg_login" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/ivCollectionHeaderIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:adjustViewBounds="true"
+            tools:src="@drawable/bg_login" />
+
+        <TextView
+            android:id="@+id/tvCollectionHeaderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_100"
+            android:layout_marginTop="@dimen/dimen_24"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center_horizontal"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/dimen_text_size_16"
+            tools:text="Day la ten cua bao tang Day la ten cua bao tang" />
+
+        <TextView
+            android:id="@+id/tvCollectionHeaderPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_100"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_horizontal"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/dimen_text_size_14"
+            tools:text="Xuan Truong, Nam Dinh" />
+
+        <ImageView
+            android:id="@+id/ivCollectionHeaderShare"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_marginVertical="@dimen/dimen_20"
+            android:background="?android:attr/actionBarItemBackground"
+            android:padding="@dimen/dimen_10"
+            android:src="@drawable/ic_share_black" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvCollectionHeaderFollow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dimen_corner_30"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:id="@+id/llCollectionHeaderFollow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/blue"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dimen_8"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_16">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_24"
+                    android:layout_height="@dimen/dimen_24"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_add_white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_6"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/follow"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_text_size_14" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llCollectionHeaderFollowing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dimen_8"
+                android:paddingStart="@dimen/dimen_12"
+                android:paddingEnd="@dimen/dimen_16"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="@dimen/dimen_24"
+                    android:layout_height="@dimen/dimen_24"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_done_white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_6"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/following"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_text_size_14" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</layout>

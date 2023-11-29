@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/flDownloadRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        android:layout_margin="@dimen/dimen_4"
+        android:background="?android:selectableItemBackground">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/ivDownloadThumbnail"
+                android:layout_width="@dimen/dimen_100"
+                android:layout_height="@dimen/dimen_100"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/intro_bg" />
+
+            <TextView
+                android:id="@+id/tvDownloadName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_8"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:maxLines="3"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_16"
+                app:layout_constraintEnd_toStartOf="@id/ivDownloadDelete"
+                app:layout_constraintStart_toEndOf="@id/ivDownloadThumbnail"
+                app:layout_constraintTop_toTopOf="@id/ivDownloadThumbnail"
+                tools:text="Day la ten cua file mo hinh sieu dai Day la ten cua file mo hinh sieu dai Day la ten cua file mo hinh sieu dai Day la ten cua file mo hinh sieu dai Day la ten cua file mo hinh sieu dai Day la ten cua file mo hinh sieu dai" />
+
+            <TextView
+                android:id="@+id/tvDownloadSize"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_8"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_regular"
+                android:maxLines="1"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/dimen_text_size_14"
+                app:layout_constraintEnd_toStartOf="@id/ivDownloadDelete"
+                app:layout_constraintStart_toEndOf="@id/ivDownloadThumbnail"
+                app:layout_constraintTop_toBottomOf="@id/tvDownloadName"
+                tools:text="39 MB" />
+
+            <ImageView
+                android:id="@+id/ivDownloadDelete"
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="@dimen/dimen_48"
+                android:background="?android:attr/actionBarItemBackground"
+                android:padding="@dimen/dimen_12"
+                android:src="@drawable/ic_close_gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

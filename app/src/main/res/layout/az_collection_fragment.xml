@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.mobdev21_night_at_the_museum.presentation.widget.CollectionView
+            android:id="@+id/cvAzCollectionKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.example.mobdev21_night_at_the_museum.presentation.widget.CollectionView
+            android:id="@+id/cvAzCollection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingHorizontal="@dimen/dimen_10"
+            android:paddingBottom="@dimen/dimen_20" />
+
+    </LinearLayout>
+
+</layout>

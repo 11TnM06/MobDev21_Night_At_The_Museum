@@ -1,10 +1,10 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.MuseumAR" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.MobDevMuseum" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:colorPrimary">@color/blue</item>
     </style>
 
-    <style name="Theme.MuseumAR.Fullscreen">
+    <style name="Theme.MobDevMuseum.Fullscreen">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowTranslucentStatus">true</item>

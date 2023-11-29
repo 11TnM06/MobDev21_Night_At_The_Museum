@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constIntroductionRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@drawable/intro_bg">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/intro_bg"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/imageView"/>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/arizonia_regular"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <View
+            android:id="@+id/vIntroductionCenterLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_40"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vIntroductionCenterLine">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcvIntroductionSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_56"
+                android:layout_marginTop="@dimen/dimen_20"
+                app:cardBackgroundColor="@color/dark_blue"
+                app:cardCornerRadius="@dimen/dimen_corner_30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/sign_in"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dimen_text_size_18" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcvIntroductionSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_56"
+                android:layout_marginTop="@dimen/dimen_20"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/dimen_corner_30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="@dimen/dimen_text_size_18" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

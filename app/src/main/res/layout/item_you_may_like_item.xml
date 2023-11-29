@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_150">
+
+        <ImageView
+            android:id="@+id/ivCollectionItemsSub"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_150"
+            android:layout_margin="@dimen/dimen_4"
+            android:adjustViewBounds="true"
+            tools:src="@drawable/bg_login" />
+
+        <ImageView
+            android:id="@+id/ivItemYouMayLike"
+            android:layout_width="@dimen/dimen_24"
+            android:layout_height="@dimen/dimen_24"
+            android:layout_gravity="top|end"
+            android:layout_margin="@dimen/dimen_12"
+            android:src="@drawable/ic_like" />
+
+    </FrameLayout>
+
+</layout>

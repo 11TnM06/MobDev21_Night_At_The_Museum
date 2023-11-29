@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="0dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivEmptyFavoriteStories1"
+            android:layout_width="@dimen/dimen_220"
+            android:layout_height="@dimen/dimen_220"
+            android:scaleType="centerCrop"
+            android:src="@color/gray_super_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/allCircleImageView" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivEmptyFavoriteStories2"
+            android:layout_width="@dimen/dimen_220"
+            android:layout_height="@dimen/dimen_220"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:scaleType="centerCrop"
+            android:src="@color/gray_super_light"
+            app:layout_constraintStart_toEndOf="@id/ivEmptyFavoriteStories1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/allCircleImageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

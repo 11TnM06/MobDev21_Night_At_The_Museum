@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivProfileAvatar"
+            android:layout_width="@dimen/dimen_48"
+            android:layout_height="@dimen/dimen_48"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="@dimen/dimen_16"
+            android:background="?android:attr/actionBarItemBackground"
+            android:padding="@dimen/dimen_2"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircleImageView"
+            tools:src="@drawable/ic_no_picture" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/flFavoriteHeaderTabFavorite"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_56"
+                android:layout_weight="1"
+                android:background="?android:selectableItemBackground">
+
+                <TextView
+                    android:id="@+id/tvFavoriteTabFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/favorite"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/dimen_text_size_16" />
+
+                <View
+                    android:id="@+id/vFavoriteHeaderTabFavoriteEnable"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="bottom"
+                    android:background="@color/blue" />
+
+                <View
+                    android:id="@+id/vFavoriteHeaderTabFavoriteDisable"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="bottom"
+                    android:background="@color/gray_light"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

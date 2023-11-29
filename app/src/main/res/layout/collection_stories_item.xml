@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/llCollectionStoriesRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvCollectionStoriesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/stories"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCollectionStoriesViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/view_all"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/dimen_text_size_14"
+                app:layout_constraintBottom_toBottomOf="@id/tvCollectionStoriesTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvCollectionStoriesTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.example.mobdev21_night_at_the_museum.presentation.widget.CollectionView
+            android:id="@+id/cvCollectionStories"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_300"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/dimen_20"
+            android:paddingEnd="@dimen/dimen_12" />
+
+    </LinearLayout>
+
+</layout>
