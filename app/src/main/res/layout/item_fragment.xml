@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_super_light"
+        android:paddingTop="?android:attr/actionBarSize">
+
+        <RelativeLayout
+            android:id="@+id/rlItemImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dimen_234">
+
+            <ImageView
+                android:id="@+id/ivItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:scaleType="fitCenter"
+                tools:src="@color/black" />
+
+        </RelativeLayout>
+
+        <com.example.mobdev21_night_at_the_museum.presentation.widget.CollectionView
+            android:id="@+id/cvItemBackDrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+</layout>

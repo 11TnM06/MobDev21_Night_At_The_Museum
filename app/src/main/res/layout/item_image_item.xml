@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dimen_100">
+
+        <ImageView
+            android:id="@+id/ivItemImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_300"
+            android:layout_above="@id/nsvItemImage"
+            android:layout_alignParentTop="true"
+            android:background="@color/black" />
+
+        <ScrollView
+            android:id="@+id/nsvItemImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="@dimen/dimen_10">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_20"
+                    app:cardCornerRadius="@dimen/dimen_corner_30"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/gray"
+                    app:strokeWidth="@dimen/dimen_1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/dimen_8"
+                        android:fontFamily="@font/roboto_medium"
+                        android:paddingHorizontal="@dimen/dimen_16"
+                        android:paddingVertical="@dimen/dimen_6"
+                        android:text="@string/zoom_in"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/dimen_text_size_16"
+                        app:drawableStartCompat="@drawable/ic_zoom_in" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_20"
+                    app:cardCornerRadius="@dimen/dimen_corner_30"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/gray"
+                    app:strokeWidth="@dimen/dimen_1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/dimen_8"
+                        android:fontFamily="@font/roboto_medium"
+                        android:paddingHorizontal="@dimen/dimen_16"
+                        android:paddingVertical="@dimen/dimen_6"
+                        android:text="@string/zoom_in"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/dimen_text_size_16"
+                        app:drawableStartCompat="@drawable/ic_zoom_in" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_20"
+                    app:cardCornerRadius="@dimen/dimen_corner_30"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/gray"
+                    app:strokeWidth="@dimen/dimen_1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="@dimen/dimen_8"
+                        android:fontFamily="@font/roboto_medium"
+                        android:paddingHorizontal="@dimen/dimen_16"
+                        android:paddingVertical="@dimen/dimen_6"
+                        android:text="@string/zoom_in"
+                        android:textColor="@color/main_black"
+                        android:textSize="@dimen/dimen_text_size_16"
+                        app:drawableStartCompat="@drawable/ic_zoom_in" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</layout>

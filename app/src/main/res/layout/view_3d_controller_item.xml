@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dimen_10"
+        tools:layout_height="@dimen/dimen_100"
+        tools:layout_margin="@dimen/dimen_100">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvView3dControllerThumbnail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintDimensionRatio="H, 1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/dimen_1">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivView3dControllerThumbnail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter"
+                    app:shapeAppearanceOverlay="@style/CircleImageViewCorner8"
+                    tools:src="@color/white" />
+
+                <FrameLayout
+                    android:id="@+id/flView3dControllerDownload"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_overlay_strong"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_30"
+                        android:layout_height="@dimen/dimen_30"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_download" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/flView3dControllerProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_overlay_strong"
+                    android:visibility="gone">
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:indeterminate="true"
+                        app:indicatorColor="@color/white"
+                        app:indicatorSize="@dimen/dimen_24" />
+
+                </FrameLayout>
+
+            </FrameLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

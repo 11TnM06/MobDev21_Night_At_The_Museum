@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:tag="layout/base_empty_default_item_0"
+        tools:ignore="MissingDefaultResource">
+
+        <ImageView
+            android:id="@+id/ivBaseEmptyDefaultItmIcon"
+            android:layout_width="@dimen/dimen_180"
+            android:layout_height="@dimen/dimen_180"
+            android:scaleType="centerInside"
+            tools:ignore="ContentDescription"
+            tools:src="@color/black" />
+
+        <TextView
+            android:id="@+id/tvBaseEmptyDefaultItmMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_12"
+            tools:text="Không có dữ liệu" />
+
+    </LinearLayout>
+
+</layout>

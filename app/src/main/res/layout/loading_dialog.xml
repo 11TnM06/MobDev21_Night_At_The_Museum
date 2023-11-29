@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:id="@+id/flLoadingRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:background="@color/black_overlay_strong">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/dimen_corner_8">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/cpiLoading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:indeterminate="true"
+                    app:indicatorColor="@color/dark_blue"
+                    app:layout_constraintBottom_toTopOf="@id/tvLoadingDialogMessage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvLoadingDialogMessage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dimen_20"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:text="@string/please_wait_for_render_model"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/dimen_text_size_18"
+                    app:layout_constraintBottom_toTopOf="@id/mcvLoadingClose"
+                    app:layout_constraintEnd_toEndOf="@id/vLoadingBound"
+                    app:layout_constraintStart_toStartOf="@id/vLoadingBound"
+                    app:layout_constraintTop_toBottomOf="@id/cpiLoading" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcvLoadingClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:layout_marginBottom="@dimen/dimen_20"
+                    app:cardBackgroundColor="@color/dark_blue"
+                    app:cardCornerRadius="@dimen/dimen_corner_30"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLoadingDialogMessage">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_medium"
+                        android:paddingHorizontal="@dimen/dimen_20"
+                        android:paddingTop="@dimen/dimen_6"
+                        android:paddingBottom="@dimen/dimen_8"
+                        android:text="@string/close"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dimen_text_size_18" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <View
+                    android:id="@+id/vLoadingTop"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/vLoadingBottom"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                    android:id="@+id/vLoadingBound"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="@id/vLoadingBottom"
+                    app:layout_constraintDimensionRatio="H, 1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/vLoadingTop" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </FrameLayout>
+
+</layout>

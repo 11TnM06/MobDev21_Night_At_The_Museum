@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_8"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:background="@color/black_overlay_strong">
+
+        <ImageView
+            android:id="@+id/ivView3d"
+            android:layout_width="@dimen/dimen_150"
+            android:layout_height="@dimen/dimen_150"
+            android:scaleType="fitCenter"
+            tools:src="@color/black" />
+
+        <TextView
+            android:id="@+id/tvView3dName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_size_16"
+            tools:text="Đây là tên mô hình siêu cấp vip pro và rất dài dòng" />
+
+        <TextView
+            android:id="@+id/tvView3dDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_marginBottom="@dimen/dimen_12"
+            android:background="?android:selectableItemBackground"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/download"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_size_14"
+            app:drawableStartCompat="@drawable/ic_download" />
+
+    </LinearLayout>
+
+</layout>

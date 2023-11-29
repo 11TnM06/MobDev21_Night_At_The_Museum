@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.mobdev21_night_at_the_museum.presentation.widget.CollectionView
+            android:id="@+id/cvItem"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_62"
+            android:clipToPadding="false"
+            android:paddingHorizontal="@dimen/dimen_16"
+            tools:listitem="@layout/item_action_item" />
+
+    </FrameLayout>
+
+</layout>

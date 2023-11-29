@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/fView3dArFragment"
+            android:name="com.google.ar.sceneform.ux.ArFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/support_simple_spinner_dropdown_item" />
+
+        <TextView
+            android:id="@+id/tvView3dControllerTutorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_60"
+            android:layout_marginTop="@dimen/dimen_100"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="@string/ar_tutorial"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_size_20"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_gravity="top">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_shadow"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivView3dControllerBack"
+                android:layout_width="?android:attr/actionBarSize"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="?android:attr/actionBarItemBackground"
+                android:padding="@dimen/dimen_18"
+                android:src="@drawable/ic_back_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivView3dControllerMore"
+                android:layout_width="?android:attr/actionBarSize"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="?android:attr/actionBarItemBackground"
+                android:padding="@dimen/dimen_18"
+                android:src="@drawable/ic_more_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivView3dControllerReload"
+                android:layout_width="?android:attr/actionBarSize"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="?android:attr/actionBarItemBackground"
+                android:padding="@dimen/dimen_18"
+                android:src="@drawable/ic_reload"
+                app:layout_constraintEnd_toStartOf="@id/ivView3dControllerMore"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/flView3DFragmentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
+
+        <include
+            android:id="@+id/layoutView3dOption"
+            layout="@layout/view_3d_option" />
+
+    </FrameLayout>
+
+</layout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEditTextViewLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_8"
+        android:padding="0dp"
+        android:textSize="@dimen/dimen_text_size_16"
+        android:visibility="gone"
+        android:textColor="@color/field_edit_title"
+        android:fontFamily="@font/roboto_regular"
+        tools:text="Label"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llEditTextViewContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rectange_white_bg_gray_stroke_corner_8"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/dimen_48"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/dimen_16"
+        android:paddingEnd="@dimen/dimen_16">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivEditTextViewLeft"
+            android:layout_width="@dimen/dimen_24"
+            android:layout_height="@dimen/dimen_24"
+            android:layout_marginEnd="@dimen/dimen_12"
+            android:focusable="false"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtEditTextViewContent"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textCursorDrawable="@drawable/shape_primary_bg_cursor_edit_text"
+            android:background="@android:color/transparent"
+            android:gravity="top|start"
+            android:importantForAutofill="no"
+            android:lines="1"
+            android:paddingTop="@dimen/dimen_16"
+            android:paddingBottom="@dimen/dimen_16"
+            android:textColorHint="@color/gray_hint"
+            android:textSize="@dimen/dimen_text_size_14" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEditTextViewContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="top|start"
+            android:lines="1"
+            android:paddingTop="@dimen/dimen_16"
+            android:paddingBottom="@dimen/dimen_16"
+            android:textColorHint="@color/gray_hint"
+            android:textSize="@dimen/dimen_text_size_14"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivEditTextViewClear"
+            android:layout_width="@dimen/dimen_20"
+            android:layout_height="@dimen/dimen_20"
+            android:layout_marginStart="@dimen/dimen_8"
+            android:layout_marginEnd="@dimen/dimen_4"
+            android:background="@drawable/shape_ripple_oval_transparent"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_close_gray"
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivEditTextViewRight"
+            android:layout_width="@dimen/dimen_24"
+            android:layout_height="@dimen/dimen_24"
+            android:layout_marginStart="@dimen/dimen_12"
+            android:background="@drawable/shape_ripple_oval_transparent"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvEditTextViewError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:textColor="@color/red"
+        android:textSize="@dimen/dimen_text_size_14"
+        android:visibility="gone"
+        tools:text="ERR"
+        android:fontFamily="@font/roboto_regular"
+        tools:visibility="visible" />
+
+</merge>
