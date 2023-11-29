@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <View
+        android:id="@+id/vStoryLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_2"
+        android:background="@color/white"
+        tools:background="@color/black"
+        tools:layout_margin="@dimen/dimen_10"
+        tools:layout_width="@dimen/dimen_30" />
+
+</layout>

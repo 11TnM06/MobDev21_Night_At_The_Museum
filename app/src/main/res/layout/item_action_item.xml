@@ -1,33 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.card.MaterialCardView
+    <FrameLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dimen_20"
-        android:layout_marginTop="@dimen/dimen_4"
-        app:cardCornerRadius="@dimen/dimen_corner_30"
-        app:cardElevation="0dp"
-        app:strokeColor="@color/gray"
-        app:strokeWidth="@dimen/dimen_1">
+        android:layout_height="match_parent"
+        tools:layout_height="@dimen/dimen_62">
 
-        <TextView
-            android:id="@+id/tvActionItem"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvItemAction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawablePadding="@dimen/dimen_8"
-            android:fontFamily="@font/roboto_medium"
-            android:paddingHorizontal="@dimen/dimen_16"
-            android:paddingVertical="@dimen/dimen_6"
-            android:text="@string/zoom_in"
-            android:textColor="@color/main_black"
-            android:textSize="@dimen/dimen_text_size_16"
-            app:drawableStartCompat="@drawable/ic_zoom_in" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="@dimen/dimen_4"
+            android:layout_marginTop="@dimen/dimen_4"
+            app:cardCornerRadius="@dimen/dimen_corner_30"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/gray_light"
+            app:strokeWidth="@dimen/dimen_1">
 
-    </com.google.android.material.card.MaterialCardView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="@dimen/dimen_16"
+                android:paddingVertical="@dimen/dimen_6">
 
-</LinearLayout>
+                <ImageView
+                    android:id="@+id/ivItemActionIcon"
+                    android:layout_width="@dimen/dimen_24"
+                    android:layout_height="@dimen/dimen_24"
+                    tools:src="@drawable/ic_zoom_in" />
+
+                <TextView
+                    android:id="@+id/tvItemAction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_8"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/dimen_text_size_16"
+                    tools:text="@string/zoom_in" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </FrameLayout>
+
+</layout>

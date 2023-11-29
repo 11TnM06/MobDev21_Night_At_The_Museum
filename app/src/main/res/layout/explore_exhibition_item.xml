@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/ivExploreExhibitionBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="1"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/bg_login" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="#00FFFFFF"
+            android:visibility="gone" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivExploreExhibitionMuseumThumb"
+            android:layout_width="@dimen/dimen_46"
+            android:layout_height="@dimen/dimen_46"
+            android:layout_marginStart="@dimen/dimen_30"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:background="@color/white"
+            android:scaleType="fitCenter"
+            app:shapeAppearanceOverlay="@style/CircleImageView"
+            tools:src="@color/blue" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/dimen_46"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/shape_rectangle_white_bg_corner_30"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/dimen_46">
+
+            <TextView
+                android:id="@+id/tvExploreExhibitionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_16"
+                tools:text="@string/current_exhibition" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/dimen_corner_10"
+                android:layout_marginTop="@dimen/dimen_20">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivExploreExhibitionThumb"
+                    android:layout_width="@dimen/dimen_200"
+                    android:layout_height="@dimen/dimen_200"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/bg_login" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvExploreExhibitionName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_20"
+                tools:text="Luxury And Power Persia To Greece" />
+
+            <TextView
+                android:id="@+id/tvExploreExhibitionDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_16"
+                tools:text="From May 4, 2023 to Aug 13, 2023" />
+
+            <TextView
+                android:id="@+id/tvExploreExhibitionMuseumInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_16"
+                tools:text="The British Museum\nUnited Kingdom" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/flExploreExhibitionBuyTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:layout_marginBottom="@dimen/dimen_30"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/dimen_corner_30"
+                app:strokeColor="@color/blue"
+                app:strokeWidth="@dimen/dimen_1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/dimen_10"
+                    android:text="@string/buy_tickets"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/dimen_text_size_16" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>
+

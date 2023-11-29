@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_8">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivFavoriteCollectionChildThumbnail"
+            android:layout_width="@dimen/dimen_300"
+            android:layout_height="@dimen/dimen_200"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/allCircleImageView"
+            tools:src="@color/black" />
+
+    </FrameLayout>
+
+</layout>

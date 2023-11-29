@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="@dimen/dimen_200"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_20"
+        android:background="?android:selectableItemBackground"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:layout_marginStart="@dimen/dimen_100"
+        tools:layout_marginTop="@dimen/dimen_100">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_228">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivHomeStreetViewThumbnail"
+                android:layout_width="@dimen/dimen_200"
+                android:layout_height="@dimen/dimen_200"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/CircleImageView"
+                tools:src="@color/black" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/dimen_48"
+                android:layout_height="@dimen/dimen_48"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="@dimen/dimen_4"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/dimen_corner_40">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/dimen_10"
+                    android:src="@drawable/ic_street_view"
+                    app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:fontFamily="@font/roboto_regular"
+            android:text="@string/explore"
+            android:textAllCaps="true"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/dimen_text_size_14" />
+
+        <TextView
+            android:id="@+id/tvHomeStreetViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:textColor="@color/main_black"
+            android:textSize="@dimen/dimen_text_size_18"
+            tools:text="Day la ten cua dia diem hehe hehe hehe hehe hehe" />
+
+        <TextView
+            android:id="@+id/tvHomeStreetViewPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10"
+            android:fontFamily="@font/roboto_regular"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/dimen_text_size_16"
+            tools:text="South Korea" />
+
+    </LinearLayout>
+
+</layout>

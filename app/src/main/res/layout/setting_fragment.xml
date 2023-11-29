@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsvSettingFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="?android:attr/actionBarSize">
+
+            <TextView
+                android:id="@+id/tvSettingNotifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_70"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/notifications"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/dimen_text_size_16"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSettingWeeklyHighlight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/weekly_highlight"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_18"
+                app:layout_constraintEnd_toStartOf="@id/swSettingWeeklyHighlight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingNotifications" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swSettingWeeklyHighlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:checked="true"
+                android:gravity="end|center_vertical"
+                android:theme="@style/SCBSwitch"
+                app:layout_constraintBottom_toBottomOf="@id/tvSettingWeeklyHighlight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvSettingWeeklyHighlight" />
+
+            <TextView
+                android:id="@+id/tvSettingWeeklyHighlightDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/weekly_highlight_description"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/dimen_text_size_16"
+                app:layout_constraintEnd_toEndOf="@id/tvSettingWeeklyHighlight"
+                app:layout_constraintStart_toStartOf="@id/tvSettingWeeklyHighlight"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingWeeklyHighlight" />
+
+            <View
+                android:id="@+id/vSettingLine1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:background="@color/gray_super_light"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingWeeklyHighlightDescription" />
+
+            <TextView
+                android:id="@+id/tvSettingContentUpdates"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/content_updates"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_18"
+                app:layout_constraintEnd_toStartOf="@id/swSettingContentUpdates"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vSettingLine1" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swSettingContentUpdates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:checked="true"
+                android:gravity="end|center_vertical"
+                android:theme="@style/SCBSwitch"
+                app:layout_constraintBottom_toBottomOf="@id/tvSettingContentUpdates"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vSettingLine1"
+                app:layout_constraintTop_toTopOf="@id/tvSettingContentUpdates" />
+
+            <TextView
+                android:id="@+id/tvSettingContentUpdatesDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/content_updates_description"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/dimen_text_size_16"
+                app:layout_constraintEnd_toEndOf="@id/tvSettingContentUpdates"
+                app:layout_constraintStart_toStartOf="@id/tvSettingContentUpdates"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingContentUpdates" />
+
+
+            <TextView
+                android:id="@+id/tvSettingEmails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_70"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/emails"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/dimen_text_size_16"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingContentUpdatesDescription" />
+
+            <TextView
+                android:id="@+id/tvSettingWeeklyHighlightEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/weekly_highlight"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_18"
+                app:layout_constraintEnd_toStartOf="@id/swSettingWeeklyHighlightEmail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingEmails" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swSettingWeeklyHighlightEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:checked="true"
+                android:gravity="end|center_vertical"
+                android:theme="@style/SCBSwitch"
+                app:layout_constraintBottom_toBottomOf="@id/tvSettingWeeklyHighlightEmail"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvSettingWeeklyHighlightEmail" />
+
+            <TextView
+                android:id="@+id/tvSettingWeeklyHighlightEmailDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/weekly_highlight_email_description"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/dimen_text_size_16"
+                app:layout_constraintEnd_toEndOf="@id/tvSettingWeeklyHighlightEmail"
+                app:layout_constraintStart_toStartOf="@id/tvSettingWeeklyHighlightEmail"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingWeeklyHighlightEmail" />
+
+            <View
+                android:id="@+id/vSettingLine2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:background="@color/gray_super_light"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingWeeklyHighlightEmailDescription" />
+
+            <TextView
+                android:id="@+id/tvSettingSpecialAnnouncements"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/special_announcement"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_18"
+                app:layout_constraintEnd_toStartOf="@id/swSettingContentUpdates"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vSettingLine2" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swSettingSpecialAnnouncements"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/dimen_20"
+                android:checked="true"
+                android:gravity="end|center_vertical"
+                android:theme="@style/SCBSwitch"
+                app:layout_constraintBottom_toBottomOf="@id/tvSettingSpecialAnnouncements"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vSettingLine2"
+                app:layout_constraintTop_toTopOf="@id/tvSettingSpecialAnnouncements" />
+
+            <TextView
+                android:id="@+id/tvSettingSpecialAnnouncementsDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/dimen_6"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/special_announcement_description"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/dimen_text_size_16"
+                app:layout_constraintEnd_toEndOf="@id/tvSettingSpecialAnnouncements"
+                app:layout_constraintStart_toStartOf="@id/tvSettingSpecialAnnouncements"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingSpecialAnnouncements" />
+
+
+            <TextView
+                android:id="@+id/tvSettingOffline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_70"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/offline_content"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/dimen_text_size_16"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingSpecialAnnouncementsDescription" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constSettingOffline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:selectableItemBackground"
+                android:paddingVertical="@dimen/dimen_20"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingOffline">
+
+                <TextView
+                    android:id="@+id/tvSettingOfflineTitleChild"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginHorizontal="@dimen/dimen_20"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/manage_offline_content"
+                    android:textColor="@color/main_black"
+                    android:textSize="@dimen/dimen_text_size_18"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvSettingOfflineTitleChildDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dimen_6"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/manage_offline_description"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/dimen_text_size_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/tvSettingOfflineTitleChild"
+                    app:layout_constraintStart_toStartOf="@id/tvSettingOfflineTitleChild"
+                    app:layout_constraintTop_toBottomOf="@id/tvSettingOfflineTitleChild" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvSettingAbout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_70"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/about"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/dimen_text_size_16"
+                app:layout_constraintTop_toBottomOf="@id/constSettingOffline" />
+
+            <TextView
+                android:id="@+id/tvSettingAboutApp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/about_app"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingAbout" />
+
+            <View
+                android:id="@+id/vSettingLine3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:background="@color/gray_super_light"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingAboutApp" />
+
+            <TextView
+                android:id="@+id/tvSettingOpenSource"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/open_source_license"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vSettingLine3" />
+
+            <View
+                android:id="@+id/vSettingLine4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:background="@color/gray_super_light"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingOpenSource" />
+
+            <TextView
+                android:id="@+id/tvSettingVersion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/version_1"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vSettingLine4" />
+
+            <View
+                android:id="@+id/vSettingLine5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:background="@color/gray_super_light"
+                app:layout_constraintTop_toBottomOf="@id/tvSettingVersion" />
+
+            <TextView
+                android:id="@+id/tvSettingLogOut"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="?android:selectableItemBackground"
+                android:fontFamily="@font/roboto_medium"
+                android:paddingHorizontal="@dimen/dimen_20"
+                android:paddingVertical="@dimen/dimen_20"
+                android:text="@string/log_out"
+                android:textColor="@color/main_black"
+                android:textSize="@dimen/dimen_text_size_18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vSettingLine5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>
