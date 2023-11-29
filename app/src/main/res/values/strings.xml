@@ -9,7 +9,7 @@
     <string name="hello">Xin chào</string>
     <string name="manage_your_MobDev_account">Quản lý tài khoản của bạn</string>
     <string name="achievement">Thành tích</string>
-    <string name="collections">Bộ sưu tập</string>
+    <string name="collections">Bảo tàng</string>
     <string name="nearby">Gần đây</string>
     <string name="experiments">Thí nghiệm</string>
     <string name="your_data_in_app">Dữ liệu của bạn</string>
@@ -95,15 +95,15 @@
     <string name="long_press_screen">long press screen</string>
     <string name="explore_with_street_view">Khám phá với chế độ xem phố</string>
     <string name="explore_with_street_view_desc">Từ hậu trường Nhà hát Opera Paris đến đỉnh Taj Mahal</string>
-    <string name="follow_your_favorite">Theo dõi bộ sưu tập yêu thích</string>
-    <string name="discover_collections">Khám phá các bộ sưu tập</string>
+    <string name="follow_your_favorite">Theo dõi bảo tàng yêu thích</string>
+    <string name="discover_collections">Khám phá các bảo tàng</string>
     <string name="visit">Tham quan</string>
     <string name="following">Đang theo dõi</string>
     <string name="follow">Theo dõi</string>
     <string name="all">Tất cả</string>
     <string name="az">A-Z</string>
     <string name="map">Bản đồ</string>
-    <string name="collection_not_found">Không tìm thấy bộ sưu tập phù hợp.</string>
+    <string name="collection_not_found">Không tìm thấy bảo tàng phù hợp.</string>
     <string name="no_data_found">Không tìm thấy dữ liệu!</string>
     <string name="please_try_again_later">Vui lòng thử lại vào lần sau.</string>
     <string name="ar_tutorial">Hướng máy ảnh của bạn xuống sàn và di chuyển vòng quanh để xác định mặt phẳng.</string>

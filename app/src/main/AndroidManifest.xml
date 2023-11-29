@@ -44,7 +44,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAnh0p5VfA2KbVZ_32OKX6php--f0pGsQk" />
+            android:value="AIzaSyAyalA-MekMQ9QcmpsyrYTfTG1EC0cLmoA" />
 
         <activity
             android:name=".presentation.camera.view3d.View3dActivity"
