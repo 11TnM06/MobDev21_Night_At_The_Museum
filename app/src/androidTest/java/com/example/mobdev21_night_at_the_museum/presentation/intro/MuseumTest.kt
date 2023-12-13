@@ -16,57 +16,232 @@ import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.`is`
 import org.hamcrest.TypeSafeMatcher
-import org.hamcrest.core.IsInstanceOf
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class CheckPrefActivityTest {
+class MuseumTest {
 
     @Rule
     @JvmField
     var mActivityScenarioRule = ActivityScenarioRule(CheckPrefActivity::class.java)
 
     @Test
-    fun checkPrefActivityTest() {
-        val linearLayout = onView(
-            allOf(
-                childAtPosition(
-                    allOf(
-                        withId(R.id.cvHomeStreetView),
-                        childAtPosition(
-                            withClassName(`is`("android.widget.LinearLayout")),
-                            2
-                        )
-                    ),
-                    0
-                ),
-                isDisplayed()
-            )
-        )
-        linearLayout.perform(click())
-
-        val appCompatImageView = onView(
-            allOf(
-                withId(R.id.ivRealMainSearch),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.constRealMainActionBar),
-                        childAtPosition(
-                            withId(R.id.ablRealMain),
-                            0
-                        )
-                    ),
-                    0
-                ),
-                isDisplayed()
-            )
-        )
-        appCompatImageView.perform(click())
-
+    fun checkPrefActivityTest2() {
+       Thread.sleep(5000)
         val materialCardView = onView(
+            allOf(
+                withId(R.id.mcvIntroductionSignIn),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.constIntroductionRoot),
+                        3
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        materialCardView.perform(click())
+        Thread.sleep(5000)
+        val appCompatEditText = onView(
+            allOf(
+                withId(R.id.etvLoginEmail),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                        2
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText.perform(replaceText("sonanhguyen003@gmail.com"), closeSoftKeyboard())
+        Thread.sleep(5000)
+        val appCompatEditText2 = onView(
+            allOf(
+                withId(R.id.etvLoginPassword),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.LinearLayout")),
+                        1
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText2.perform(replaceText("12345678"), closeSoftKeyboard())
+        Thread.sleep(5000)
+        val materialCardView2 = onView(
+            allOf(
+                withId(R.id.btnLogin),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                        2
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
+        materialCardView2.perform(click())
+        Thread.sleep(5000)
+        val materialCardView3 = onView(
+            allOf(
+                withId(R.id.btnLogin),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                        2
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
+        materialCardView3.perform(click())
+        Thread.sleep(5000)
+        val appCompatEditText3 = onView(
+            allOf(
+                withId(R.id.etvLoginPassword), withText("12345678"),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.LinearLayout")),
+                        1
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText3.perform(click())
+        Thread.sleep(5000)
+        val appCompatEditText4 = onView(
+            allOf(
+                withId(R.id.etvLoginPassword), withText("12345678"),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.LinearLayout")),
+                        1
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText4.perform(click())
+        Thread.sleep(5000)
+        val appCompatEditText5 = onView(
+            allOf(
+                withId(R.id.etvLoginPassword), withText("12345678"),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.LinearLayout")),
+                        1
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText5.perform(replaceText("12345678"))
+        Thread.sleep(5000)
+        val appCompatEditText6 = onView(
+            allOf(
+                withId(R.id.etvLoginPassword), withText("12345678"),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.LinearLayout")),
+                        1
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText6.perform(closeSoftKeyboard())
+        Thread.sleep(5000)
+        val materialCardView4 = onView(
+            allOf(
+                withId(R.id.btnLogin),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                        2
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
+        materialCardView4.perform(click())
+        Thread.sleep(5000)
+        val appCompatEditText7 = onView(
+            allOf(
+                withId(R.id.etvLoginEmail), withText("sonanhguyen003@gmail.com"),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                        2
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText7.perform(click())
+        Thread.sleep(5000)
+        val appCompatEditText8 = onView(
+            allOf(
+                withId(R.id.etvLoginEmail), withText("sonanhguyen003@gmail.com"),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                        2
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText8.perform(replaceText("sonanhnguyen003@gmail.com"))
+        Thread.sleep(5000)
+        val appCompatEditText9 = onView(
+            allOf(
+                withId(R.id.etvLoginEmail), withText("sonanhnguyen003@gmail.com"),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                        2
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText9.perform(closeSoftKeyboard())
+        Thread.sleep(5000)
+        val materialCardView5 = onView(
+            allOf(
+                withId(R.id.btnLogin),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                        2
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
+        materialCardView5.perform(click())
+        Thread.sleep(5000)
+        val materialCardView6 = onView(
             allOf(
                 withId(R.id.mcvHomeCollectionExploreAll),
                 childAtPosition(
@@ -79,72 +254,9 @@ class CheckPrefActivityTest {
                 isDisplayed()
             )
         )
-        materialCardView.perform(click())
-
+        materialCardView6.perform(click())
+        Thread.sleep(5000)
         val frameLayout = onView(
-            allOf(
-                withId(R.id.flCollectionsTabAll),
-                withParent(withParent(withId(R.id.llCollectionsHeader))),
-                isDisplayed()
-            )
-        )
-        frameLayout.check(matches(isDisplayed()))
-
-        val frameLayout2 = onView(
-            allOf(
-                withId(R.id.flCollectionsTabAZ),
-                withParent(withParent(withId(R.id.llCollectionsHeader))),
-                isDisplayed()
-            )
-        )
-        frameLayout2.check(matches(isDisplayed()))
-
-        val viewGroup = onView(
-            allOf(
-                withId(R.id.constCollectionsRoot),
-                withParent(
-                    allOf(
-                        withId(R.id.cvAllCollectionTabAll),
-                        withParent(IsInstanceOf.instanceOf(android.widget.FrameLayout::class.java))
-                    )
-                ),
-                isDisplayed()
-            )
-        )
-        viewGroup.check(matches(isDisplayed()))
-
-        val viewGroup2 = onView(
-            allOf(
-                withId(R.id.constCollectionsRoot),
-                withParent(
-                    allOf(
-                        withId(R.id.cvAllCollectionTabAll),
-                        withParent(IsInstanceOf.instanceOf(android.widget.FrameLayout::class.java))
-                    )
-                ),
-                isDisplayed()
-            )
-        )
-        viewGroup2.check(matches(isDisplayed()))
-
-        val constraintLayout = onView(
-            allOf(
-                childAtPosition(
-                    allOf(
-                        withId(R.id.flRealMainContainer),
-                        childAtPosition(
-                            withClassName(`is`("androidx.coordinatorlayout.widget.CoordinatorLayout")),
-                            3
-                        )
-                    ),
-                    0
-                ),
-                isDisplayed()
-            )
-        )
-        constraintLayout.perform(click())
-
-        val frameLayout3 = onView(
             allOf(
                 withId(R.id.flCollectionsTabAZ),
                 childAtPosition(
@@ -157,74 +269,16 @@ class CheckPrefActivityTest {
                 isDisplayed()
             )
         )
-        frameLayout3.perform(click())
-
-        val frameLayout4 = onView(
+        frameLayout.perform(click())
+        Thread.sleep(5000)
+        val frameLayout2 = onView(
             allOf(
                 withId(R.id.flAzCollection),
-                withParent(
+                childAtPosition(
                     allOf(
                         withId(R.id.cvAzCollectionKey),
-                        withParent(IsInstanceOf.instanceOf(android.widget.LinearLayout::class.java))
-                    )
-                ),
-                isDisplayed()
-            )
-        )
-        frameLayout4.check(matches(isDisplayed()))
-
-        val frameLayout5 = onView(
-            allOf(
-                withId(R.id.flAzCollection),
-                withParent(
-                    allOf(
-                        withId(R.id.cvAzCollectionKey),
-                        withParent(IsInstanceOf.instanceOf(android.widget.LinearLayout::class.java))
-                    )
-                ),
-                isDisplayed()
-            )
-        )
-        frameLayout5.check(matches(isDisplayed()))
-
-        val frameLayout6 = onView(
-            allOf(
-                withId(R.id.flCollectionsTabAll),
-                childAtPosition(
-                    childAtPosition(
-                        withId(R.id.llCollectionsHeader),
-                        1
-                    ),
-                    0
-                ),
-                isDisplayed()
-            )
-        )
-        frameLayout6.perform(click())
-
-        val frameLayout7 = onView(
-            allOf(
-                withId(R.id.flCollectionsTabAll),
-                childAtPosition(
-                    childAtPosition(
-                        withId(R.id.llCollectionsHeader),
-                        1
-                    ),
-                    0
-                ),
-                isDisplayed()
-            )
-        )
-        frameLayout7.perform(click())
-
-        val constraintLayout2 = onView(
-            allOf(
-                withId(R.id.constCollectionsRoot),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.cvAllCollectionTabAll),
                         childAtPosition(
-                            withClassName(`is`("android.widget.FrameLayout")),
+                            withClassName(`is`("android.widget.LinearLayout")),
                             0
                         )
                     ),
@@ -233,53 +287,70 @@ class CheckPrefActivityTest {
                 isDisplayed()
             )
         )
-        constraintLayout2.perform(click())
-
-        val imageView = onView(
+        frameLayout2.perform(click())
+        Thread.sleep(5000)
+        val constraintLayout = onView(
             allOf(
-                withId(R.id.ivCollectionHeaderThumbnail),
-                withParent(withParent(IsInstanceOf.instanceOf(android.widget.LinearLayout::class.java))),
+                withId(R.id.constCollectionsRoot),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.cvAzCollection),
+                        childAtPosition(
+                            withClassName(`is`("android.widget.LinearLayout")),
+                            1
+                        )
+                    ),
+                    0
+                ),
                 isDisplayed()
             )
         )
-        imageView.check(matches(isDisplayed()))
-
-        val imageView2 = onView(
+        constraintLayout.perform(click())
+        Thread.sleep(5000)
+        val materialCardView7 = onView(
             allOf(
-                withId(R.id.ivCollectionHeaderIcon),
-                withParent(withParent(withId(R.id.cvCollection))),
+                withId(R.id.mcvCollectionHeaderFollow),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.cvCollection),
+                        0
+                    ),
+                    5
+                ),
                 isDisplayed()
             )
         )
-        imageView2.check(matches(isDisplayed()))
-
-        val imageView3 = onView(
+        materialCardView7.perform(click())
+        Thread.sleep(5000)
+        val materialCardView8 = onView(
             allOf(
-                withId(R.id.ivCollectionHeaderShare),
-                withParent(withParent(withId(R.id.cvCollection))),
+                withId(R.id.mcvCollectionHeaderFollow),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.cvCollection),
+                        0
+                    ),
+                    5
+                ),
                 isDisplayed()
             )
         )
-        imageView3.check(matches(isDisplayed()))
-
-        val textView = onView(
-            allOf(
-                withId(R.id.tvCollectionDescription),
-                withText("The Abbey Theatre was founded as Ireland’s national theatre, by W.B. Yeats and Lady Gregory in 1904 'to bring upon the stage the deeper emotions of Ireland'. Although written more than a hundred years ago, this is still the kernel of what constitutes the artistic imperative for the Abbey Theatre today."),
-                withParent(withParent(withId(R.id.cvCollection))),
-                isDisplayed()
-            )
-        )
-        textView.check(matches(isDisplayed()))
-
-        val textView2 = onView(
+        materialCardView8.perform(click())
+        Thread.sleep(5000)
+        val materialTextView = onView(
             allOf(
                 withId(R.id.tvCollectionDescriptionReadMore), withText("Đọc thêm"),
-                withParent(withParent(withId(R.id.cvCollection))),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.cvCollection),
+                        1
+                    ),
+                    1
+                ),
                 isDisplayed()
             )
         )
-        textView2.check(matches(isDisplayed()))
+        materialTextView.perform(click())
     }
 
     private fun childAtPosition(
