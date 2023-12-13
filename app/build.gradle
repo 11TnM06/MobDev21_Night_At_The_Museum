@@ -15,8 +15,8 @@ android {
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -64,6 +64,8 @@ dependencies {
 
     // data binding
     implementation 'androidx.databinding:databinding-runtime:8.0.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.0-alpha02'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.0-alpha02'
     kapt "com.android.databinding:compiler:$android_plugin_version"
 
     // material design
@@ -108,7 +110,22 @@ dependencies {
 
     // two way view
     implementation 'org.lucasr.twowayview:twowayview:0.1.4'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    testImplementation "org.mockito.kotlin:mockito-kotlin:5.2.1"
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test:rules:1.4.0'
 }
+
 
 kapt {
     generateStubs = true
