@@ -32,7 +32,7 @@ class NewfeedTest {
     @Test
     fun newfeed() {
         val materialCardView = onView(
-            allOf(
+             allOf(
                 withId(R.id.mcvIntroductionSignUp),
                 childAtPosition(
                     childAtPosition(
