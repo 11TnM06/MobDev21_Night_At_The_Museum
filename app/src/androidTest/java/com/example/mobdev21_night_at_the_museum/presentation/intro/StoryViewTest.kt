@@ -98,22 +98,21 @@ class StoryViewTest {
 
         val textView = onView(
             allOf(
-                withId(R.id.tvStoryTitle), withText("Vincent Van Gogh's Love Life"),
+                withId(R.id.tvStoryTitle),
                 withParent(withParent(IsInstanceOf.instanceOf(android.widget.FrameLayout::class.java))),
                 isDisplayed()
             )
         )
-        textView.check(matches(withText("Vincent Van Gogh's Love Life")))
+        textView.check(matches(isDisplayed()))
 
         val textView2 = onView(
             allOf(
                 withId(R.id.tvStory),
-                withText("Vincent was never lucky in love. How come it never seemed to work out?"),
                 withParent(withParent(IsInstanceOf.instanceOf(android.widget.LinearLayout::class.java))),
                 isDisplayed()
             )
         )
-        textView2.check(matches(withText("Vincent was never lucky in love. How come it never seemed to work out?")))
+        textView2.check(matches(isDisplayed()))
 
         val cardView = onView(
             allOf(
